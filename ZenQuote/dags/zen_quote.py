@@ -1,4 +1,5 @@
 from airflow.sdk import asset
+import json
 import os
 
 OBJECT_STORAGE_SYSTEM = os.getenv("OBJECT_STORAGE_SYSTEM", default = "file")
@@ -7,48 +8,362 @@ OBJECT_STORAGE_PATH_NEWSLETTER = os.getenv("OBJECT_STORAGE_PATH_NEWSLETTER", def
 
 
 @asset(schedule="@daily")
-def raw_zen_quotes() -> list[dict]:
+def raw_zen_quotes(context: dict) -> list[dict]:
 
     """
     Extracts random set of quotes
     """
     import requests
 
-    r = requests.get("http://zenquotes.io/api/quotes/random")
-    quotes = r.json()
+    #r = requests.get("http://zenquotes.io/api/quotes/random")
+    #quotes = r.json()
+    quotes = [
+    {
+        "a": "Spencer Johnson",
+        "c": 69,
+        "h": "<blockquote>&ldquo;The quicker you let go of old cheese, the sooner you find new cheese.&rdquo; &mdash; <footer>Spencer Johnson</footer></blockquote>",
+        "q": "The quicker you let go of old cheese, the sooner you find new cheese."
+    },
+    {
+        "a": "Pablo Picasso",
+        "c": 82,
+        "h": "<blockquote>&ldquo;I am always doing that which I can not do, in order that I may learn how to do it.&rdquo; &mdash; <footer>Pablo Picasso</footer></blockquote>",
+        "q": "I am always doing that which I can not do, in order that I may learn how to do it."
+    },
+    {
+        "a": "Zig Ziglar",
+        "c": 50,
+        "h": "<blockquote>&ldquo;If you aim at nothing, you will hit it every time.&rdquo; &mdash; <footer>Zig Ziglar</footer></blockquote>",
+        "q": "If you aim at nothing, you will hit it every time."
+    },
+    {
+        "a": "Heraclitus",
+        "c": 97,
+        "h": "<blockquote>&ldquo;No man ever steps in the same river twice, for it&#039;s not the same river and he&#039;s not the same man.&rdquo; &mdash; <footer>Heraclitus</footer></blockquote>",
+        "q": "No man ever steps in the same river twice, for it's not the same river and he's not the same man."
+    },
+    {
+        "a": "Seungsahn",
+        "c": 83,
+        "h": "<blockquote>&ldquo;The one who praises you is a thief. The one who criticizes you is your true friend.&rdquo; &mdash; <footer>Seungsahn</footer></blockquote>",
+        "q": "The one who praises you is a thief. The one who criticizes you is your true friend."
+    },
+    {
+        "a": "Theodore Roosevelt",
+        "c": 74,
+        "h": "<blockquote>&ldquo;Keep your eyes on the stars, but remember to keep your feet on the ground.&rdquo; &mdash; <footer>Theodore Roosevelt</footer></blockquote>",
+        "q": "Keep your eyes on the stars, but remember to keep your feet on the ground."
+    },
+    {
+        "a": "Robert Kiyosaki",
+        "c": 125,
+        "h": "<blockquote>&ldquo;It&#039;s not what you say out of your mouth that determines your life, it&#039;s what you whisper to yourself that has the most power!&rdquo; &mdash; <footer>Robert Kiyosaki</footer></blockquote>",
+        "q": "It's not what you say out of your mouth that determines your life, it's what you whisper to yourself that has the most power!"
+    },
+    {
+        "a": "Vaclav Havel",
+        "c": 115,
+        "h": "<blockquote>&ldquo;We must not be afraid of dreaming the seemingly impossible if we want the seemingly impossible to become a reality.&rdquo; &mdash; <footer>Vaclav Havel</footer></blockquote>",
+        "q": "We must not be afraid of dreaming the seemingly impossible if we want the seemingly impossible to become a reality."
+    },
+    {
+        "a": "Gary Keller",
+        "c": 52,
+        "h": "<blockquote>&ldquo;Life is a question and how we live it is our answer.&rdquo; &mdash; <footer>Gary Keller</footer></blockquote>",
+        "q": "Life is a question and how we live it is our answer."
+    },
+    {
+        "a": "Conrad Hilton",
+        "c": 31,
+        "h": "<blockquote>&ldquo;It always started with a dream.&rdquo; &mdash; <footer>Conrad Hilton</footer></blockquote>",
+        "q": "It always started with a dream."
+    },
+    {
+        "a": "Mark Manson",
+        "c": 80,
+        "h": "<blockquote>&ldquo;To be happy we need something to solve. Happiness is therefore a form of action.&rdquo; &mdash; <footer>Mark Manson</footer></blockquote>",
+        "q": "To be happy we need something to solve. Happiness is therefore a form of action."
+    },
+    {
+        "a": "Jim Rohn",
+        "c": 48,
+        "h": "<blockquote>&ldquo;Don&#039;t wish it were easier, wish you were better.&rdquo; &mdash; <footer>Jim Rohn</footer></blockquote>",
+        "q": "Don't wish it were easier, wish you were better."
+    },
+    {
+        "a": "Eckhart Tolle",
+        "c": 88,
+        "h": "<blockquote>&ldquo;Sometimes letting things go is an act of far greater power than defending or hanging on.&rdquo; &mdash; <footer>Eckhart Tolle</footer></blockquote>",
+        "q": "Sometimes letting things go is an act of far greater power than defending or hanging on."
+    },
+    {
+        "a": "Zig Ziglar",
+        "c": 75,
+        "h": "<blockquote>&ldquo;Sometimes adversity is what you need to face in order to become successful.&rdquo; &mdash; <footer>Zig Ziglar</footer></blockquote>",
+        "q": "Sometimes adversity is what you need to face in order to become successful."
+    },
+    {
+        "a": "Judy Garland",
+        "c": 84,
+        "h": "<blockquote>&ldquo;A heart is not judged by how much you love, but by how much you are loved by others.&rdquo; &mdash; <footer>Judy Garland</footer></blockquote>",
+        "q": "A heart is not judged by how much you love, but by how much you are loved by others."
+    },
+    {
+        "a": "Wayne Dyer",
+        "c": 124,
+        "h": "<blockquote>&ldquo;There&#039;s no scarcity of opportunity to make a living at what you love. There is only a scarcity of resolve to make it happen.&rdquo; &mdash; <footer>Wayne Dyer</footer></blockquote>",
+        "q": "There's no scarcity of opportunity to make a living at what you love. There is only a scarcity of resolve to make it happen."
+    },
+    {
+        "a": "Mae West",
+        "c": 70,
+        "h": "<blockquote>&ldquo;It&#039;s not the men in your life that matters, it&#039;s the life in your men.&rdquo; &mdash; <footer>Mae West</footer></blockquote>",
+        "q": "It's not the men in your life that matters, it's the life in your men."
+    },
+    {
+        "a": "Mark Manson",
+        "c": 34,
+        "h": "<blockquote>&ldquo;Freedom itself demands discomfort.&rdquo; &mdash; <footer>Mark Manson</footer></blockquote>",
+        "q": "Freedom itself demands discomfort."
+    },
+    {
+        "a": "Seungsahn",
+        "c": 45,
+        "h": "<blockquote>&ldquo;Don&#039;t want anything. Then you get everything.&rdquo; &mdash; <footer>Seungsahn</footer></blockquote>",
+        "q": "Don't want anything. Then you get everything."
+    },
+    {
+        "a": "Bob Proctor",
+        "c": 53,
+        "h": "<blockquote>&ldquo;Change is inevitable but personal growth is a choice.&rdquo; &mdash; <footer>Bob Proctor</footer></blockquote>",
+        "q": "Change is inevitable but personal growth is a choice."
+    },
+    {
+        "a": "Rita Mae Brown",
+        "c": 34,
+        "h": "<blockquote>&ldquo;Normal is the average of deviance.&rdquo; &mdash; <footer>Rita Mae Brown</footer></blockquote>",
+        "q": "Normal is the average of deviance."
+    },
+    {
+        "a": "Vincent van Gogh",
+        "c": 95,
+        "h": "<blockquote>&ldquo;Those who dream by day are cognizant of many things which escape those who dream only by night.&rdquo; &mdash; <footer>Vincent van Gogh</footer></blockquote>",
+        "q": "Those who dream by day are cognizant of many things which escape those who dream only by night."
+    },
+    {
+        "a": "Thomas Jefferson",
+        "c": 79,
+        "h": "<blockquote>&ldquo;Do not bite at the bait of pleasure, till you know there is no hook beneath it.&rdquo; &mdash; <footer>Thomas Jefferson</footer></blockquote>",
+        "q": "Do not bite at the bait of pleasure, till you know there is no hook beneath it."
+    },
+    {
+        "a": "Henry Ford",
+        "c": 83,
+        "h": "<blockquote>&ldquo;Obstacles are those frightful things you see when you take your eyes off your goal.&rdquo; &mdash; <footer>Henry Ford</footer></blockquote>",
+        "q": "Obstacles are those frightful things you see when you take your eyes off your goal."
+    },
+    {
+        "a": "Les Brown",
+        "c": 49,
+        "h": "<blockquote>&ldquo;Life has no limitations except the ones you make.&rdquo; &mdash; <footer>Les Brown</footer></blockquote>",
+        "q": "Life has no limitations except the ones you make."
+    },
+    {
+        "a": "Maxime Lagace",
+        "c": 33,
+        "h": "<blockquote>&ldquo;Fools read fast. Geniuses reread.&rdquo; &mdash; <footer>Maxime Lagace</footer></blockquote>",
+        "q": "Fools read fast. Geniuses reread."
+    },
+    {
+        "a": "Celestine Chua",
+        "c": 97,
+        "h": "<blockquote>&ldquo;Problems remain as problems because people are busy defending them rather than finding solutions.&rdquo; &mdash; <footer>Celestine Chua</footer></blockquote>",
+        "q": "Problems remain as problems because people are busy defending them rather than finding solutions."
+    },
+    {
+        "a": "Epictetus",
+        "c": 62,
+        "h": "<blockquote>&ldquo;He who laughs at himself never runs out of things to laugh at.&rdquo; &mdash; <footer>Epictetus</footer></blockquote>",
+        "q": "He who laughs at himself never runs out of things to laugh at."
+    },
+    {
+        "a": "Jiddu Krishnamurti",
+        "c": 65,
+        "h": "<blockquote>&ldquo;Real learning comes about when the competitive spirit has ceased.&rdquo; &mdash; <footer>Jiddu Krishnamurti</footer></blockquote>",
+        "q": "Real learning comes about when the competitive spirit has ceased."
+    },
+    {
+        "a": "Colin R. Davis",
+        "c": 51,
+        "h": "<blockquote>&ldquo;Don&#039;t watch the clock; do what it does. Keep going.&rdquo; &mdash; <footer>Colin R. Davis</footer></blockquote>",
+        "q": "Don't watch the clock; do what it does. Keep going."
+    },
+    {
+        "a": "Amelia Earhart",
+        "c": 44,
+        "h": "<blockquote>&ldquo;There&#039;s more to life than being a passenger.&rdquo; &mdash; <footer>Amelia Earhart</footer></blockquote>",
+        "q": "There's more to life than being a passenger."
+    },
+    {
+        "a": "Nelson Mandela",
+        "c": 86,
+        "h": "<blockquote>&ldquo;You can start changing our world for the better daily, no matter how small the action.&rdquo; &mdash; <footer>Nelson Mandela</footer></blockquote>",
+        "q": "You can start changing our world for the better daily, no matter how small the action."
+    },
+    {
+        "a": "Neale Donald Walsch",
+        "c": 44,
+        "h": "<blockquote>&ldquo;Nothing in this universe occurs by accident.&rdquo; &mdash; <footer>Neale Donald Walsch</footer></blockquote>",
+        "q": "Nothing in this universe occurs by accident."
+    },
+    {
+        "a": "Amelia Earhart",
+        "c": 85,
+        "h": "<blockquote>&ldquo;The greatest work that kindness does to others is that it makes them kind themselves.&rdquo; &mdash; <footer>Amelia Earhart</footer></blockquote>",
+        "q": "The greatest work that kindness does to others is that it makes them kind themselves."
+    },
+    {
+        "a": "Joyce Meyer",
+        "c": 56,
+        "h": "<blockquote>&ldquo;Stop being tormented by everyone else&#039;s reaction to you.&rdquo; &mdash; <footer>Joyce Meyer</footer></blockquote>",
+        "q": "Stop being tormented by everyone else's reaction to you."
+    },
+    {
+        "a": "Jack London",
+        "c": 91,
+        "h": "<blockquote>&ldquo;Life is not always a matter of holding good cards, but sometimes, playing a poor hand well.&rdquo; &mdash; <footer>Jack London</footer></blockquote>",
+        "q": "Life is not always a matter of holding good cards, but sometimes, playing a poor hand well."
+    },
+    {
+        "a": "John Wooden",
+        "c": 62,
+        "h": "<blockquote>&ldquo;If you&#039;re not making mistakes, then you&#039;re not doing anything.&rdquo; &mdash; <footer>John Wooden</footer></blockquote>",
+        "q": "If you're not making mistakes, then you're not doing anything."
+    },
+    {
+        "a": "Josh Waitzkin",
+        "c": 101,
+        "h": "<blockquote>&ldquo;No matter how much preparation we do, in the real tests of our lives, we&#039;ll be in unfamiliar terrain.&rdquo; &mdash; <footer>Josh Waitzkin</footer></blockquote>",
+        "q": "No matter how much preparation we do, in the real tests of our lives, we'll be in unfamiliar terrain."
+    },
+    {
+        "a": "Robert Frost",
+        "c": 104,
+        "h": "<blockquote>&ldquo;Two roads diverged in a wood, and I took the one less traveled by, and that has made all the difference.&rdquo; &mdash; <footer>Robert Frost</footer></blockquote>",
+        "q": "Two roads diverged in a wood, and I took the one less traveled by, and that has made all the difference."
+    },
+    {
+        "a": "T.S. Eliot",
+        "c": 109,
+        "h": "<blockquote>&ldquo;If you haven&#039;t the strength to impose your own terms upon life, then you must accept the terms it offers you.&rdquo; &mdash; <footer>T.S. Eliot</footer></blockquote>",
+        "q": "If you haven't the strength to impose your own terms upon life, then you must accept the terms it offers you."
+    },
+    {
+        "a": "Robert Greene",
+        "c": 72,
+        "h": "<blockquote>&ldquo;Be as fluid as water, do not give your enemies anything solid to attack.&rdquo; &mdash; <footer>Robert Greene</footer></blockquote>",
+        "q": "Be as fluid as water, do not give your enemies anything solid to attack."
+    },
+    {
+        "a": "Woody Allen",
+        "c": 117,
+        "h": "<blockquote>&ldquo;Men learn to love the woman they are attracted to. Women learn to become attracted to the man they fall in love with.&rdquo; &mdash; <footer>Woody Allen</footer></blockquote>",
+        "q": "Men learn to love the woman they are attracted to. Women learn to become attracted to the man they fall in love with."
+    },
+    {
+        "a": "James Allen",
+        "c": 98,
+        "h": "<blockquote>&ldquo;All that a man achieves and all that he fails to achieve is the direct result of his own thoughts.&rdquo; &mdash; <footer>James Allen</footer></blockquote>",
+        "q": "All that a man achieves and all that he fails to achieve is the direct result of his own thoughts."
+    },
+    {
+        "a": "Orison Swett Marden",
+        "c": 44,
+        "h": "<blockquote>&ldquo;A good system shortens the road to the goal.&rdquo; &mdash; <footer>Orison Swett Marden</footer></blockquote>",
+        "q": "A good system shortens the road to the goal."
+    },
+    {
+        "a": "Christopher McCandless",
+        "c": 36,
+        "h": "<blockquote>&ldquo;Happiness is only real, when shared.&rdquo; &mdash; <footer>Christopher McCandless</footer></blockquote>",
+        "q": "Happiness is only real, when shared."
+    },
+    {
+        "a": "Tony Robbins",
+        "c": 97,
+        "h": "<blockquote>&ldquo;We will act consistently with our view of who we truly are, whether that view is accurate or not.&rdquo; &mdash; <footer>Tony Robbins</footer></blockquote>",
+        "q": "We will act consistently with our view of who we truly are, whether that view is accurate or not."
+    },
+    {
+        "a": "Joyce Meyer",
+        "c": 52,
+        "h": "<blockquote>&ldquo;You cannot have a positive life and a negative mind.&rdquo; &mdash; <footer>Joyce Meyer</footer></blockquote>",
+        "q": "You cannot have a positive life and a negative mind."
+    },
+    {
+        "a": "John Wooden",
+        "c": 77,
+        "h": "<blockquote>&ldquo;If you don&#039;t have time to do it right, when will you have time to do it over?&rdquo; &mdash; <footer>John Wooden</footer></blockquote>",
+        "q": "If you don't have time to do it right, when will you have time to do it over?"
+    },
+    {
+        "a": "Bob Proctor",
+        "c": 82,
+        "h": "<blockquote>&ldquo;Thoughts become things. If you see it in your mind, you will hold it in your hand.&rdquo; &mdash; <footer>Bob Proctor</footer></blockquote>",
+        "q": "Thoughts become things. If you see it in your mind, you will hold it in your hand."
+    },
+    {
+        "a": "Lao Tzu",
+        "c": 38,
+        "h": "<blockquote>&ldquo;Great acts are made up of small deeds.&rdquo; &mdash; <footer>Lao Tzu</footer></blockquote>",
+        "q": "Great acts are made up of small deeds."
+    }
+]
+    os.makedirs("include/data", exist_ok=True)
+    with open("include/data/raw_zen_quotes.json", "w") as file:
+        json.dump(quotes, file)
+
+
     return quotes
 
 
 @asset (schedule=[raw_zen_quotes])
-def selected_quotes(context: dict) -> dict:
+def selected_quotes(raw_zen_quotes: dict) -> dict:
     """
     Transforms the extracted raw_zen_quotes 
     """
     import numpy as np
+    from airflow.models.xcom import XCom
 
-    raw_zen_quotes = context["ti"].xcom_pull( 
-        dag_id="raw_zen_quotes",
-        task_ids="raw_zen_quotes",
-        key = "return_value",
-        include_prior_dates = True
-    )
+   # raw_zen_quotes = context["ti"].xcom_pull(task_ids = ["raw_zen_quotes"], include_prior_dates = True)
 
-    print(raw_zen_quotes)
+    #print(all_xcoms) 
+    with open ("include/data/raw_zen_quotes.json", "r") as f:
+        raw_zen_quotes = json.load(f)
+    
+
+    print(f'Load {len(raw_zen_quotes)} quotes from file.')
+
+
+    
+   # print(raw_zen_quotes)
     quotes_character_count = [int(quote["c"]) for quote in raw_zen_quotes]
     median = np.median(quotes_character_count)
 
-    median_quote = min( raw_zen_quotes, key=lambda quote: abs(int(quote["c"]))- median )
 
+    median_quote = min( raw_zen_quotes, key = lambda q: int(q['c'])-median)
     raw_zen_quotes.pop(raw_zen_quotes.index(median_quote))
 
-    short_quote = [ quote for quote in raw_zen_quotes if int(quote["c"]) < median_quote ][0]
-    long_quote = [ quote for quote in raw_zen_quotes if int(quote["c"]) > median_quote ][0]
+    short_quote = [ quote for quote in raw_zen_quotes if int(quote["c"]) < median ][0]
+    long_quote = [ quote for quote in raw_zen_quotes if int(quote["c"]) > median ][0]
 
-    return { 
-        "median_q": median_quote,
-        "short_q": short_quote,
-        "long_q": long_quote
-    }
+    quotes =  [short_quote, median_quote , long_quote ]
+
+    with open("include/data/selected_quotes.json", "w") as file:
+        json.dump(quotes,file)
+
+
+    return quotes 
 
 
 @asset( schedule=[selected_quotes])
@@ -56,37 +371,46 @@ def formatted_newsletter(context: dict) -> None:
     """
     Formats the newsletter. 
     """
+    import numpy as np
 
     from airflow.sdk import ObjectStoragePath
 
     object_storage_path = ObjectStoragePath(f"{OBJECT_STORAGE_SYSTEM}://{OBJECT_STORAGE_PATH_NEWSLETTER}",conn_id = OBJECT_STORAGE_CONN_ID)
     date = context['dag_run'].run_after.strftime('%Y-%m-%d')
 
-    selected_quotes = context["ti"].xcom_pull(
-        dag_id= "selected_quotes",
-        task_ids = ["selected_quotes"],
-        key = "return_value",
-        include_prior_dates= True
-    )
 
+    with open("include/data/selected_quotes.json", "r") as file:
+        selected_quotes = json.load(file)
+
+    
+    
+    quotes_characters_counts = [int(quote['c']) for quote in selected_quotes]
+    median = np.median(quotes_characters_counts)
+    print("Test 1")
 
     newsletter_template_path = ( 
-        newsletter_template_path/ "newsletter_template.txt"
+        object_storage_path / "newsletter_template.txt"
     )
 
-    newsletter_tamplate = ( newsletter_template_path.read_text())
-
-    newsltetter = newsletter_template_path.format( 
-        quote_text_1 = selected_quotes["short_q"]["q"],
-        quote_author_1 = selected_quotes["short_q"]["a"],
-        quote_text_2 = selected_quotes["median_q"]["q"],
-        quote_author_2 = selected_quotes["long_q"]["a"],
-        quote_text_3 = selected_quotes["long_q"]["q"],
-        quote_author_3 = selected_quotes["long_q"]["a"]
+    newsletter_template = ( 
+        newsletter_template_path.read_text()
+        )
+    print("Test 2")
+    print(type(newsletter_template))
+    print(newsletter_template)
+    newsltetter = newsletter_template.format(
+        date = {date},
+        quote_text_1 = selected_quotes[0]["q"],
+        quote_author_1 = selected_quotes[0]["a"],
+        quote_text_2 = selected_quotes[1]["q"],
+        quote_author_2 = selected_quotes[1]["a"],
+        quote_text_3 = selected_quotes[2]["q"],
+        quote_author_3 = selected_quotes[2]["a"]
     )
 
     date_newsletter_path = ( 
         object_storage_path / f"{date}_newsletter.txt"
     )
+    print(newsltetter)
 
     date_newsletter_path.write_text(newsltetter)

@@ -1,15 +1,15 @@
 ===========================================
-Daily Reality Tunnel {date}
+Daily Reality Tunnel {'2026-07-02'}
 ===========================================
-{date} will be templated by Airflow
+{'2026-07-02'} will be templated by Airflow
 with the date of the pipeline run.
 
 Hello Cosmic Traveler,
 As you surf the probabilistic waves of existence today,
 take these three quotes with you:
-1. "{quote_text_1}" - {quote_author_1}
-2. "{quote_text_2}" - {quote_author_2}
-3. "{quote_text_3}" - {quote_author_3}
+1. "The quicker you let go of old cheese, the sooner you find new cheese." - Spencer Johnson
+2. "It always started with a dream." - Conrad Hilton
+3. "I am always doing that which I can not do, in order that I may learn how to do it." - Pablo Picasso
 Have a fantastic journey!
 
 AllThingsLookingUp Team
