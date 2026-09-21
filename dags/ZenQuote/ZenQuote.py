@@ -1,4 +1,5 @@
 from airflow.sdk import task, dag
+from airflow.sdk import get_current_context
 import json
 import os
 from datetime import datetime
@@ -6,7 +7,7 @@ from datetime import datetime
 
 OBJECT_STORAGE_SYSTEM = os.getenv("OBJECT_STORAGE_SYSTEM", default = "file")
 OBJECT_STORAGE_CONN_ID = os.getenv("OBJECT_STORAGE_CONN_ID", default=None)
-OBJECT_STORAGE_PATH_NEWSLETTER = os.getenv("OBJECT_STORAGE_PATH_NEWSLETTER", default="include/news_letter")
+OBJECT_STORAGE_PATH_NEWSLETTER = os.getenv("OBJECT_STORAGE_PATH_NEWSLETTER", default="dags/ZenQuote/include")
 
 ZENQUOTE_API_URL = os.getenv("ZENQUOTE_API_URL", default=None)
 SCHEDULE = "0 6 * * *"
@@ -42,7 +43,7 @@ def ZenQuote():
 
 
     @task ()
-    def selected_quotes(raw_zen_quotes: dict) -> dict:
+    def selected_quotes(raw_zen_quotes: dict) -> list:
 
         """
         Transforms the extracted raw_zen_quotes 
@@ -53,7 +54,7 @@ def ZenQuote():
     # raw_zen_quotes = context["ti"].xcom_pull(task_ids = ["raw_zen_quotes"], include_prior_dates = True)
 
         #print(all_xcoms) 
-        with open ("include/data/raw_zen_quotes.json", "r") as f:
+        with open ("dags/ZenQuote/include/data/raw_zen_quotes.json", "r") as f:
             raw_zen_quotes = json.load(f)
         
 
@@ -74,7 +75,7 @@ def ZenQuote():
 
         quotes =  [short_quote, median_quote , long_quote ]
 
-        with open("include/data/selected_quotes.json", "w") as file:
+        with open("dags/ZenQuote/include/data/selected_quotes.json", "w") as file:
             json.dump(quotes,file)
 
 
@@ -82,7 +83,7 @@ def ZenQuote():
 
 
     @task ()
-    def formatted_newsletter(context: dict) -> None:
+    def formatted_newsletter(quotes) -> None:
         """
         Formats the newsletter. 
         """
@@ -90,11 +91,12 @@ def ZenQuote():
 
         from airflow.sdk import ObjectStoragePath
 
+        context = get_current_context()
         object_storage_path = ObjectStoragePath(f"{OBJECT_STORAGE_SYSTEM}://{OBJECT_STORAGE_PATH_NEWSLETTER}",conn_id = OBJECT_STORAGE_CONN_ID)
         date = context['dag_run'].run_after.strftime('%Y-%m-%d')
 
 
-        with open("include/data/selected_quotes.json", "r") as file:
+        with open("dags/ZenQuote/include/data/selected_quotes.json", "r") as file:
             selected_quotes = json.load(file)
 
         
