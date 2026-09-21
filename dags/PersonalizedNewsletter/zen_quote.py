@@ -1,4 +1,4 @@
-from airflow.sdk import asset
+from airflow.sdk import asset, task
 import json
 import os
 
@@ -7,8 +7,8 @@ OBJECT_STORAGE_CONN_ID = os.getenv("OBJECT_STORAGE_CONN_ID", default=None)
 OBJECT_STORAGE_PATH_NEWSLETTER = os.getenv("OBJECT_STORAGE_PATH_NEWSLETTER", default="include/news_letter")
 
 
-@asset(schedule="@daily")
-def raw_zen_quotes(context: dict) -> list[dict]:
+@task(schedule="@daily")
+def extract_raw_zen_quotes(context: dict) -> list[dict]:
 
     """
     Extracts random set of quotes
@@ -17,6 +17,7 @@ def raw_zen_quotes(context: dict) -> list[dict]:
 
     #r = requests.get("http://zenquotes.io/api/quotes/random")
     #quotes = r.json()
+
     quotes = [
     {
         "a": "Spencer Johnson",
@@ -327,7 +328,7 @@ def raw_zen_quotes(context: dict) -> list[dict]:
     return quotes
 
 
-@asset (schedule=[raw_zen_quotes])
+@task (schedule=[raw_zen_quotes])
 def selected_quotes(raw_zen_quotes: dict) -> dict:
     """
     Transforms the extracted raw_zen_quotes 
@@ -366,7 +367,7 @@ def selected_quotes(raw_zen_quotes: dict) -> dict:
     return quotes 
 
 
-@asset( schedule=[selected_quotes])
+@task( schedule=[selected_quotes])
 def formatted_newsletter(context: dict) -> None:
     """
     Formats the newsletter. 
