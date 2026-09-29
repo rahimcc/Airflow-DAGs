@@ -1,2 +1,4 @@
 apache-airflow-providers-common-io==1.7.3
 geopy
+pytest
+requests
