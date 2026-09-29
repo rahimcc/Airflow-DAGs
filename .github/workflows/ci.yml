@@ -18,7 +18,7 @@ jobs:
           - name: Set up virtualenv
             run: |
              
-                sudo apt install python3.10-venv
+                sudo apt install python3.10-venv -y
                 python3 -m venv .venv
                 . .venv/bin/activate
                 pip install --upgrade pip
