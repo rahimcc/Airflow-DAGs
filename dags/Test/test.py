@@ -23,27 +23,26 @@ CFG = dotenv_values(Path(__file__).parent / ".env")
 
 BAKU_TZ = ZoneInfo("Asia/Baku")
 
-PG= { 'host':CFG['PG_HOST'],
-         'port':CFG['PG_PORT'],
-         'dbname':CFG['PG_DATABASE'],
-         'user':CFG['PG_USER'],
-         'password':CFG['PG_PASSWORD'] 
+PG= { 'host':CFG.get('PG_HOST','localhost'),
+         'port':CFG.get('PG_PORT','5433'),
+         'dbname':CFG.get('PG_DATABASE','postgres'),
+         'user':CFG.get('PG_USER','user'),
+         'password':CFG.get('PG_PASSWORD','password')
          } 
 
 CH = { 
-        'host':CFG['CH_HOST'],
-          'port':CFG['CH_PORT'],
-          'user':CFG['CH_USER'],
-          'password':CFG['CH_PASSWORD'] 
-
+        'host':CFG.get('CH_HOST','localhost'),
+          'port':CFG.get('CH_PORT','8321'),
+          'user':CFG.get('CH_USER','user'),
+          'password':CFG.get('CH_PASSWORD','password')  
      } 
 
 SW =    {
-         'client':CFG['S3_ENDPOINT'],
-          'server': CFG['S3_SERVER_ENDPOINT'],
-          'bucket': CFG['S3_BUCKET'],
-          'key' : CFG['S3_KEY'],
-          'secret': CFG['S3_SECRET']    
+         'client':CFG.get('S3_ENDPOINT','localhost'),
+          'server': CFG.get('S3_SERVER_ENDPOINT','localhost'),
+          'bucket': CFG.get('S3_BUCKET','raw'),
+          'key' : CFG.get('S3_KEY','key'),
+          'secret': CFG.get('S3_SECRET','secret')   
         }
 
 # the laptop uploads through one address; ClickHouse itself reads through anothe
