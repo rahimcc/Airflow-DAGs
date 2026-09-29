@@ -1,48 +1,50 @@
 import io
-import os
 from datetime import datetime
-from dotenv import dotenv_values
 from pathlib import Path
-from dotenv import dotenv_values
+from zoneinfo import ZoneInfo
 
-
+import boto3
 import clickhouse_connect
 import pandas as pd
 import psycopg2
 from botocore.config import Config
-import boto3
+from dotenv import dotenv_values
 
 try:                                    # Airflow 3
     from airflow.sdk import DAG, task
 except ImportError:                     # Airflow 2
     from airflow import DAG
     from airflow.decorators import task
-
-
 # Test new pipeline
+
 
 CFG = dotenv_values(Path(__file__).parent / ".env")
 
 
+BAKU_TZ = ZoneInfo("Asia/Baku")
 
+PG= { 'host':CFG['PG_HOST'],
+         'port':CFG['PG_PORT'],
+         'dbname':CFG['PG_DATABASE'],
+         'user':CFG['PG_USER'],
+         'password':CFG['PG_PASSWORD'] 
+         } 
 
-PG= dict(host=CFG['PG_HOST'],
-         port=CFG['PG_PORT'],
-         dbname=CFG['PG_DATABASE'],
-         user=CFG['PG_USER'],
-         password=CFG['PG_PASSWORD'])
+CH = { 
+        'host':CFG['CH_HOST'],
+          'port':CFG['CH_PORT'],
+          'user':CFG['CH_USER'],
+          'password':CFG['CH_PASSWORD'] 
 
-CH = dict(host=CFG['CH_HOST'],
-          port=CFG['CH_PORT'],
-          user=CFG['CH_USER'],
-          password=CFG['CH_PASSWORD'])
+     } 
 
-
-SW = dict(client= CFG['S3_ENDPOINT'],
-          server= CFG['S3_SERVER_ENDPOINT'],
-          bucket= CFG['S3_BUCKET'],
-          key = CFG['S3_KEY'],
-          secret = CFG['S3_SECRET'])
+SW =    {
+         'client':CFG['S3_ENDPOINT'],
+          'server': CFG['S3_SERVER_ENDPOINT'],
+          'bucket': CFG['S3_BUCKET'],
+          'key' : CFG['S3_KEY'],
+          'secret': CFG['S3_SECRET']    
+        }
 
 # the laptop uploads through one address; ClickHouse itself reads through anothe
 
@@ -56,7 +58,7 @@ def s3():
 
 
 
-with DAG("smoke_test_pos", start_date=datetime(2026, 9, 1),
+with DAG("smoke_test_pos", start_date=datetime(2026, 9, 1, tzinfo=BAKU_TZ),
          schedule=None, catchup=False, tags=["test"]) as dag:
 
     @task
@@ -78,8 +80,8 @@ with DAG("smoke_test_pos", start_date=datetime(2026, 9, 1),
         client = s3()
 
         try:
-            client.head_bucket(Bucket=CFG['S3_BUCKET'])
-        except Exception:
+            client.head_bucket(Bucket=CFG['S3_BUCKET']) 
+        except Exception:    # noqa: BLE001
             client.create_bucket(Bucket=CFG['S3_BUCKET'])
 
         buf = io.BytesIO()
@@ -119,4 +121,4 @@ if __name__ == "__main__":
     check_connections.function()
     info = extract.function()
     result = load.function(info)
-    verify.function(result)
+    verify.function(result) 
