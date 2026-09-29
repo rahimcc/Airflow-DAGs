@@ -31,7 +31,8 @@ jobs:
           - name: DAG import test
             run: |
                 . .venv/bin/activate
-                python -c " from airflow.models import DagBag
+                python -c 
+                    "from airflow.models import DagBag
                     d = DagBag('dags/', include_examples=False)
                     if d.import_errors:
                         for filename, error in d.import_errors.items():
