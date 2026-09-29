@@ -31,6 +31,6 @@ jobs:
           - name: DAG import test
             run: |
                 . .venv/bin/activate
-                python tests/test_dag_imports.py
+                python tests/dag_import_test.py
                 
 
