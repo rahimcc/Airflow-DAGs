@@ -17,8 +17,8 @@ jobs:
 
           - name: Set up virtualenv
             run: |
-             
-                sudo apt install python3.10-venv -y
+                sudo apt-get update -y
+                sudo apt install python3-venv -y
                 python3 -m venv .venv
                 . .venv/bin/activate
                 pip install --upgrade pip
@@ -31,7 +31,8 @@ jobs:
           - name: DAG import test
             run: |
                 . .venv/bin/activate
-                python -c " from airflow.models import DagBag
+                python -c 
+                    "from airflow.models import DagBag
                     d = DagBag('dags/', include_examples=False)
                     if d.import_errors:
                         for filename, error in d.import_errors.items():
