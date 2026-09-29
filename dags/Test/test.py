@@ -19,6 +19,8 @@ except ImportError:                     # Airflow 2
     from airflow.decorators import task
 
 
+# Test new pipeline
+
 CFG = dotenv_values(Path(__file__).parent / ".env")
 
 
