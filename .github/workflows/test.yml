@@ -1,0 +1,16 @@
+name: Runner Test
+
+
+on:
+    push:
+        branches: [feat/ci-cd]
+
+
+jobs:
+    hello:
+        runs-on: self-hosted 
+        steps:
+            - run: echo "Runner is alive"
+            - run: whoami
+            - run: pwd
+            - run: date
