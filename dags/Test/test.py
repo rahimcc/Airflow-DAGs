@@ -1,58 +1,76 @@
 import io
 from datetime import datetime
-from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import boto3
 import clickhouse_connect
 import pandas as pd
 import psycopg2
+from airflow.models import Variable
+from airflow.sdk import DAG, task
 from botocore.config import Config
-from dotenv import dotenv_values
 
-try:                                    # Airflow 3
-    from airflow.sdk import DAG, task
-except ImportError:                     # Airflow 2
-    from airflow import DAG
-    from airflow.decorators import task
 # Test pipeline
-
-
-CFG = dotenv_values(Path(__file__).parent / ".env")
-
 
 BAKU_TZ = ZoneInfo("Asia/Baku")
 
-PG= { 'host':CFG.get('PG_HOST','localhost'),
-         'port':CFG.get('PG_PORT','5433'),
-         'dbname':CFG.get('PG_DATABASE','postgres'),
-         'user':CFG.get('PG_USER','user'),
-         'password':CFG.get('PG_PASSWORD','password')
-         } 
 
-CH = { 
-        'host':CFG.get('CH_HOST','localhost'),
-          'port':CFG.get('CH_PORT','8321'),
-          'user':CFG.get('CH_USER','user'),
-          'password':CFG.get('CH_PASSWORD','password')  
+def get_env():
+
+    env = Variable.get("pos_env", default_var='dev')
+    if env not in ("dev", "prod"):
+        raise ValueError(f'pos_env must be dev or prod, GO {env!r}')
+    return env
+
+def get_table():
+    env = get_env()
+    db = 'raw' if env == 'prod' else 'raw_dev'
+    return db
+
+def s3_prefix():
+    """Builds the key prefix, dev-scoped or not, based on that"""
+    env = get_env()
+    return '_dev/' if env == 'dev' else 'raw'
+
+
+
+def get_pg_config():
+    return { 'host': Variable.get('pg_host'),
+         'port':Variable.get('pg_port'),
+         'dbname':Variable.get('pg_database'),
+         'user': Variable.get('pg_user'),
+         'password': Variable.get('pg_postgres_password')
+         }
+
+def get_ch_config():
+    return { 
+        'host': Variable.get('ch_host'),
+          'port': Variable.get('ch_port'),
+          'user': Variable.get('ch_user'),
+          'password': Variable.get('ch_password')
      } 
 
-SW =    {
-         'client':CFG.get('S3_ENDPOINT','localhost'),
-          'server': CFG.get('S3_SERVER_ENDPOINT','localhost'),
-          'bucket': CFG.get('S3_BUCKET','raw'),
-          'key' : CFG.get('S3_KEY','key'),
-          'secret': CFG.get('S3_SECRET','secret')   
+
+def get_sw_config():
+   return {
+         's3_client_endpoint': Variable.get('s3_client_endpoint'),
+          's3_server_endpoint': Variable.get('s3_server_endpoint'),
+          's3_bucket': Variable.get('s3_bucket'),
+          's3_key' :  Variable.get('s3_key'),
+          's3_secret': Variable.get('s3_secret')   
         }
 
 # the laptop uploads through one address; ClickHouse itself reads through anothe
 
-TABLE = "raw_dev.pos_test"              # dev names only, hardcoded on purpose
+             # dev names only, hardcoded on purpose
 
+TABLE = get_table()
 
 def s3():
-    return boto3.client("s3", endpoint_url=SW['client'],
-                        aws_access_key_id=SW['key'], aws_secret_access_key=SW['secret'],
+
+    SW = get_sw_config() 
+    return boto3.client("s3", endpoint_url=SW['s3_client_endpoint'],
+                        aws_access_key_id=SW['s3_key'], aws_secret_access_key=SW['s3_secret'],
                         config=Config(s3={"addressing_style": "path"}))
 
 
@@ -62,6 +80,10 @@ with DAG("smoke_test_pos", start_date=datetime(2026, 9, 1, tzinfo=BAKU_TZ),
 
     @task
     def check_connections():
+        PG = get_pg_config()
+        CH = get_ch_config()
+
+
         with psycopg2.connect(**PG) as c, c.cursor() as cur:
             cur.execute("SELECT count(*) FROM turyan_retail.pos_transactions")
             print("Postgres OK, rows:", cur.fetchone()[0])
@@ -72,6 +94,9 @@ with DAG("smoke_test_pos", start_date=datetime(2026, 9, 1, tzinfo=BAKU_TZ),
 
     @task
     def extract(ds=None):
+        PG = get_pg_config()
+        SW = get_sw_config()
+
         with psycopg2.connect(**PG) as c:
             df = pd.read_sql("SELECT * FROM turyan_retail.pos_transactions "
                              "ORDER BY transaction_id LIMIT 100", c)
@@ -79,21 +104,25 @@ with DAG("smoke_test_pos", start_date=datetime(2026, 9, 1, tzinfo=BAKU_TZ),
         client = s3()
 
         try:
-            client.head_bucket(Bucket=CFG['S3_BUCKET']) 
+            client.head_bucket(Bucket=SW['s3_bucket']) 
         except Exception:    # noqa: BLE001
-            client.create_bucket(Bucket=CFG['S3_BUCKET'])
+            client.create_bucket(Bucket=SW['s3_bucket'])
 
         buf = io.BytesIO()
         df.to_parquet(buf, index=False)
         buf.seek(0)
-        client.upload_fileobj(buf, CFG['S3_BUCKET'], key)
-        print(f"Extracted {len(df)} rows -> s3://{CFG['S3_BUCKET']}/{key}")
+        client.upload_fileobj(buf, SW['s3_bucket'], key)
+        print(f"Extracted {len(df)} rows -> s3://{SW['s3_bucket']}/{key}")
         return {"key": key, "rows": len(df)}
 
     @task
     def load(info: dict):
+        CH = get_ch_config()
+        SW = get_sw_config()
+        TABLE = get_table()
+
         ch = clickhouse_connect.get_client(**CH)
-        ch.command("CREATE DATABASE IF NOT EXISTS raw_dev")
+        ch.command(f"CREATE DATABASE IF NOT EXISTS {TABLE}")
         ch.command(f"""CREATE TABLE IF NOT EXISTS {TABLE} (
             transaction_id Int64, store_code String, pos_sku String,
             customer_id String, quantity Int32, unit_price Decimal(10,2),
@@ -103,21 +132,17 @@ with DAG("smoke_test_pos", start_date=datetime(2026, 9, 1, tzinfo=BAKU_TZ),
         ch.command(f"""INSERT INTO {TABLE}
             SELECT transaction_id, store_code, pos_sku, customer_id, quantity,
                    unit_price, transaction_date, updated_at
-            FROM s3('{CFG['S3_SERVER_ENDPOINT']}/{CFG['S3_BUCKET']}/{info['key']}',
-                    '{CFG['S3_KEY']}', '{CFG['S3_SECRET']}', 'Parquet')""")
+            FROM s3('{SW['s3_server_endpoint']}/{SW['s3_bucket']}/{info['key']}',
+                    '{SW['s3_key']}', '{SW['s3_secret']}', 'Parquet')""")
         return info
 
     @task
     def verify(info: dict):
+        CH = get_ch_config()
+
         n = clickhouse_connect.get_client(**CH).command(
             f"SELECT count() FROM {TABLE}")
         print(f"Extracted {info['rows']}, loaded {n}")
         assert n == info["rows"], "row count mismatch!"
 
     check_connections() >> verify(load(extract()))
-
-if __name__ == "__main__":
-    check_connections.function()
-    info = extract.function()
-    result = load.function(info)
-    verify.function(result) 
