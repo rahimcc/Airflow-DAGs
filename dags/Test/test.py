@@ -7,12 +7,14 @@ import clickhouse_connect
 import pandas as pd
 import psycopg2
 from airflow.models import Variable
+from airflow.providers.standard.operators.bash import BashOperator
 from airflow.sdk import DAG, task
 from botocore.config import Config
 
 # Test pipeline
 
 BAKU_TZ = ZoneInfo("Asia/Baku")
+DBT_PROJECT_DIR = "/opt/airflow/dags_repo/current/dbt/turyan_retail"
 
 
 def get_env():
@@ -64,7 +66,6 @@ def get_sw_config():
 
              # dev names only, hardcoded on purpose
 
-TABLE = get_table()
 
 def s3():
 
@@ -139,10 +140,21 @@ with DAG("smoke_test_pos", start_date=datetime(2026, 9, 1, tzinfo=BAKU_TZ),
     @task
     def verify(info: dict):
         CH = get_ch_config()
+        TABLE = get_table()
 
         n = clickhouse_connect.get_client(**CH).command(
             f"SELECT count() FROM {TABLE}")
         print(f"Extracted {info['rows']}, loaded {n}")
         assert n == info["rows"], "row count mismatch!"
 
-    check_connections() >> verify(load(extract()))
+
+    t_dbt_build = BashOperator(
+                        task_id = "dbt_build",
+                        bash_command = f'cd {DBT_PROJECT_DIR} && /opt/dbt_venv/bin/dbt  build --target {{{{ var.value.pos_env }}}} --log-path /tmp/dbt_logs --target-path /tmp/dbt_target',
+                        append_env = True
+                )
+
+    
+         
+
+    check_connections() >> verify(load(extract())) >> t_dbt_build

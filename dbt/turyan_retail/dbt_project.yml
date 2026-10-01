@@ -1,0 +1,16 @@
+name: 'turyan_retail'
+version: '1.0.0'
+config-version: 2
+
+profile: 'turyan_retail'
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  turyan_retail:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

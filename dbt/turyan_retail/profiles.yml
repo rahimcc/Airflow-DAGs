@@ -1,0 +1,20 @@
+turyan_retail:
+  target: dev
+  outputs:
+    dev:
+      type: clickhouse
+      schema: analytics_dev
+      host: host.docker.internal
+      port: 18123
+      user: admin
+      password: "xT2vBGuvLMy8MJKzu2PD"
+      secure: false
+
+    prod:
+      type: clickhouse
+      schema: analytics
+      host: localhost
+      port: 18123
+      user: admin
+      password: "xT2vBGuvLMy8MJKzu2PD"
+      secure: false
