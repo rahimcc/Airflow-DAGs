@@ -1,0 +1,1022 @@
+[0m10:34:28.121905 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106d92930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11080d400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11080d160>]}
+
+
+============================== 10:34:28.125315 | 326b24fd-cc3e-4239-aba1-9a05134fcb29 ==============================
+[0m10:34:28.125315 [info ] [MainThread]: Running with dbt=1.12.5
+[0m10:34:28.125638 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'log_cache_events': 'False', 'warn_error': 'None', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'profiles_dir': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail', 'debug': 'False', 'maximum_seed_size_mib': '1', 'indirect_selection': 'eager', 'empty': 'None', 'cache_selected_only': 'False', 'partial_parse': 'True', 'no_print': 'None', 'log_format': 'default', 'version_check': 'True', 'quiet': 'False', 'use_experimental_parser': 'False', 'log_path': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/logs', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'invocation_command': 'dbt debug', 'write_json': 'True', 'hints_enabled': 'True'}
+[0m10:34:28.136326 [info ] [MainThread]: dbt version: 1.12.5
+[0m10:34:28.136590 [info ] [MainThread]: python version: 3.12.10
+[0m10:34:28.136724 [info ] [MainThread]: python path: /Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/bin/python3.12
+[0m10:34:28.136840 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit
+[0m10:34:28.139959 [info ] [MainThread]: Using profiles dir at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail
+[0m10:34:28.140118 [info ] [MainThread]: Using profiles.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/profiles.yml
+[0m10:34:28.140233 [info ] [MainThread]: Using dbt_project.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/dbt_project.yml
+[0m10:34:28.183773 [info ] [MainThread]: Configuration:
+[0m10:34:28.184025 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m10:34:28.184158 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:34:28.184272 [info ] [MainThread]: Required dependencies:
+[0m10:34:28.184453 [debug] [MainThread]: Executing "git --help"
+[0m10:34:28.205405 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:34:28.205870 [debug] [MainThread]: STDERR: "b''"
+[0m10:34:28.206014 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:34:28.206144 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m10:34:28.206268 [info ] [MainThread]: [31m1 check failed:[0m
+[0m10:34:28.206379 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Compilation Error
+    Could not render {{ var.value.ch_host }}: 'dbt.context.base.Var object' has no attribute 'value'
+
+
+[0m10:34:28.252976 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.18050592, "process_in_blocks": "0", "process_kernel_time": 0.147606, "process_mem_max_rss": "119947264", "process_out_blocks": "0", "process_user_time": 0.747225}
+[0m10:34:28.253359 [debug] [MainThread]: Command `dbt debug` failed at 10:34:28.253301 after 0.18 seconds
+[0m10:34:28.253640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100ac2bd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110a1d760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1108fa210>]}
+[0m10:34:28.253858 [debug] [MainThread]: Flushing usage events
+[0m10:34:29.144556 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:36:57.399609 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10685d850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1093b5490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1093b51c0>]}
+
+
+============================== 10:36:57.402280 | 43b58056-8424-4b19-be2b-adf2a5d9bfb9 ==============================
+[0m10:36:57.402280 [info ] [MainThread]: Running with dbt=1.12.5
+[0m10:36:57.402561 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'cache_selected_only': 'False', 'no_print': 'None', 'debug': 'False', 'static_parser': 'True', 'introspect': 'True', 'log_path': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/logs', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'fail_fast': 'False', 'hints_enabled': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'invocation_command': 'dbt debug', 'profiles_dir': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail', 'partial_parse': 'True', 'write_json': 'True', 'maximum_seed_size_mib': '1', 'use_colors': 'True', 'warn_error': 'None', 'log_format': 'default', 'version_check': 'True', 'empty': 'None', 'log_cache_events': 'False'}
+[0m10:36:57.411007 [info ] [MainThread]: dbt version: 1.12.5
+[0m10:36:57.411228 [info ] [MainThread]: python version: 3.12.10
+[0m10:36:57.411357 [info ] [MainThread]: python path: /Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/bin/python3.12
+[0m10:36:57.411467 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit
+[0m10:36:57.437428 [info ] [MainThread]: Using profiles dir at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail
+[0m10:36:57.437659 [info ] [MainThread]: Using profiles.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/profiles.yml
+[0m10:36:57.437781 [info ] [MainThread]: Using dbt_project.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/dbt_project.yml
+[0m10:36:57.479177 [info ] [MainThread]: Configuration:
+[0m10:36:57.479431 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m10:36:57.479567 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:36:57.479680 [info ] [MainThread]: Required dependencies:
+[0m10:36:57.479886 [debug] [MainThread]: Executing "git --help"
+[0m10:36:57.491377 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:36:57.491929 [debug] [MainThread]: STDERR: "b''"
+[0m10:36:57.492098 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:36:57.492242 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m10:36:57.492368 [info ] [MainThread]: [31m1 check failed:[0m
+[0m10:36:57.492482 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "turyan_retail", target "dev" invalid: '18123' is not valid under any of the given schemas
+
+
+[0m10:36:57.494581 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.14074762, "process_in_blocks": "0", "process_kernel_time": 0.13327, "process_mem_max_rss": "123518976", "process_out_blocks": "0", "process_user_time": 0.723571}
+[0m10:36:57.494830 [debug] [MainThread]: Command `dbt debug` failed at 10:36:57.494787 after 0.14 seconds
+[0m10:36:57.495076 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106edca70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b79af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108939880>]}
+[0m10:36:57.495274 [debug] [MainThread]: Flushing usage events
+[0m10:36:58.627453 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:37:27.248820 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104eb0ef0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11040d4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11040d1f0>]}
+
+
+============================== 10:37:27.251481 | a322c300-bb1d-42a0-9165-3219137aefa8 ==============================
+[0m10:37:27.251481 [info ] [MainThread]: Running with dbt=1.12.5
+[0m10:37:27.251761 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'write_json': 'True', 'hints_enabled': 'True', 'quiet': 'False', 'warn_error': 'None', 'indirect_selection': 'eager', 'fail_fast': 'False', 'target_path': 'None', 'log_path': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/logs', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'profiles_dir': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail', 'log_format': 'default', 'no_print': 'None', 'partial_parse': 'True', 'printer_width': '80', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'log_cache_events': 'False', 'empty': 'None', 'static_parser': 'True', 'debug': 'False'}
+[0m10:37:27.259559 [info ] [MainThread]: dbt version: 1.12.5
+[0m10:37:27.259766 [info ] [MainThread]: python version: 3.12.10
+[0m10:37:27.259897 [info ] [MainThread]: python path: /Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/bin/python3.12
+[0m10:37:27.260009 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit
+[0m10:37:27.291569 [info ] [MainThread]: Using profiles dir at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail
+[0m10:37:27.291830 [info ] [MainThread]: Using profiles.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/profiles.yml
+[0m10:37:27.291969 [info ] [MainThread]: Using dbt_project.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/dbt_project.yml
+[0m10:37:27.292379 [info ] [MainThread]: adapter type: clickhouse
+[0m10:37:27.292581 [info ] [MainThread]: adapter version: 1.10.3
+[0m10:37:27.333837 [info ] [MainThread]: Configuration:
+[0m10:37:27.334080 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:37:27.334219 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:37:27.334337 [info ] [MainThread]: Required dependencies:
+[0m10:37:27.334514 [debug] [MainThread]: Executing "git --help"
+[0m10:37:27.348163 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:37:27.348655 [debug] [MainThread]: STDERR: "b''"
+[0m10:37:27.348802 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:37:27.348949 [info ] [MainThread]: Connection:
+[0m10:37:27.349106 [info ] [MainThread]:   driver: None
+[0m10:37:27.349225 [info ] [MainThread]:   host: 10.0.0.178
+[0m10:37:27.349336 [info ] [MainThread]:   port: 18123
+[0m10:37:27.349447 [info ] [MainThread]:   user: default
+[0m10:37:27.349561 [info ] [MainThread]:   schema: analytics_dev
+[0m10:37:27.349667 [info ] [MainThread]:   retries: 1
+[0m10:37:27.349766 [info ] [MainThread]:   cluster: None
+[0m10:37:27.349865 [info ] [MainThread]:   database_engine: None
+[0m10:37:27.349977 [info ] [MainThread]:   cluster_mode: False
+[0m10:37:27.350077 [info ] [MainThread]:   secure: False
+[0m10:37:27.350177 [info ] [MainThread]:   verify: True
+[0m10:37:27.350277 [info ] [MainThread]:   client_cert: None
+[0m10:37:27.350373 [info ] [MainThread]:   client_cert_key: None
+[0m10:37:27.350473 [info ] [MainThread]:   connect_timeout: 10
+[0m10:37:27.350564 [info ] [MainThread]:   send_receive_timeout: 300
+[0m10:37:27.350661 [info ] [MainThread]:   sync_request_timeout: 5
+[0m10:37:27.350756 [info ] [MainThread]:   compress_block_size: 1048576
+[0m10:37:27.350849 [info ] [MainThread]:   compression: 
+[0m10:37:27.350945 [info ] [MainThread]:   check_exchange: True
+[0m10:37:27.351039 [info ] [MainThread]:   custom_settings: None
+[0m10:37:27.351135 [info ] [MainThread]:   use_lw_deletes: False
+[0m10:37:27.351238 [info ] [MainThread]:   allow_automatic_deduplication: False
+[0m10:37:27.351334 [info ] [MainThread]:   tcp_keepalive: False
+[0m10:37:27.351429 [info ] [MainThread]:   reuse_connections: True
+[0m10:37:27.351528 [info ] [MainThread]:   server_host_name: None
+[0m10:37:27.351814 [info ] [MainThread]: Registered adapter: clickhouse=1.10.3
+[0m10:37:27.416801 [debug] [MainThread]: Acquiring new clickhouse connection 'debug'
+[0m10:37:27.417158 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:37:47.480713 [debug] [MainThread]: dbt_clickhouse adapter: Got a retryable error when attempting to open a clickhouse connection.
+1 attempts remaining. Retrying in 1 seconds.
+Error:
+Error HTTPConnectionPool(host='10.0.0.178', port=18123): Max retries exceeded with url: /?query_id=ef0df1b6-37c1-4680-8f3a-6b2a5c7e2d5f (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x110c75ee0>, 'Connection to 10.0.0.178 timed out. (connect timeout=10)')) executing HTTP request attempt 1 (http://10.0.0.178:18123)
+[0m10:38:02.549640 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+
+[0m10:38:02.588707 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/connection.py", line 494, in request
+    self.endheaders()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1093, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/connection.py", line 325, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x110c75ee0>, 'Connection to 10.0.0.178 timed out. (connect timeout=10)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/_backend/http_sync.py", line 332, in request
+    response: HTTPResponse = cast(HTTPResponse, cast(PoolManager, self.http).request(method, url, **kwargs))
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/_request_methods.py", line 143, in request
+    return self.request_encode_body(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/_request_methods.py", line 278, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/poolmanager.py", line 459, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='10.0.0.178', port=18123): Max retries exceeded with url: /?query_id=ef0df1b6-37c1-4680-8f3a-6b2a5c7e2d5f (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x110c75ee0>, 'Connection to 10.0.0.178 timed out. (connect timeout=10)'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/clickhouse/httpclient.py", line 116, in _create_client
+    return clickhouse_connect.get_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/__init__.py", line 388, in create_client
+    return HttpClient(
+           ^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/httpclient.py", line 223, in __init__
+    super().__init__(
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/client.py", line 234, in __init__
+    self._init_common_settings(resolved_tz_source)
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/httpclient.py", line 242, in _init_common_settings
+    super()._init_common_settings(tz_source)
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/client.py", line 241, in _init_common_settings
+    result = run_sync(init_sequence(config), self._execute_operation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/_backend/orchestration.py", line 217, in run_sync
+    operation = sequence.throw(execution_error)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/_backend/orchestration.py", line 87, in init_sequence
+    version_result = yield CommandOp("SELECT version(), timezone()", use_database=False)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/_backend/orchestration.py", line 221, in run_sync
+    response = execute(operation)
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/client.py", line 252, in _execute_operation
+    return self.command(operation.text, settings=settings, use_database=operation.use_database)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/_backendclient.py", line 145, in command
+    execution = self._backend.execute_command(bound_cmd, bind_params, data, external_data, runtime, transport_settings)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/_backend/http_sync.py", line 268, in execute_command
+    response = self.request(plan.payload, plan.params, plan.headers, plan.method, fields=plan.form_files, server_wait=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/_backend/http_sync.py", line 357, in request
+    raise OperationalError(f"Error {ex} executing HTTP request attempt {attempts} ({self.url})") from ex
+clickhouse_connect.driver.exceptions.OperationalError: Error HTTPConnectionPool(host='10.0.0.178', port=18123): Max retries exceeded with url: /?query_id=ef0df1b6-37c1-4680-8f3a-6b2a5c7e2d5f (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x110c75ee0>, 'Connection to 10.0.0.178 timed out. (connect timeout=10)')) executing HTTP request attempt 1 (http://10.0.0.178:18123)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/base/connections.py", line 237, in retry_connection
+    connection.handle = connect()
+                        ^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/clickhouse/connections.py", line 45, in connect
+    return get_db_client(credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/clickhouse/dbclient.py", line 76, in get_db_client
+    return ChHttpClient(credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/clickhouse/dbclient.py", line 102, in __init__
+    self._client = self._create_client(credentials)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/clickhouse/httpclient.py", line 136, in _create_client
+    raise ChRetryableException(str(ex)) from ex
+dbt.adapters.clickhouse.dbclient.ChRetryableException: Error HTTPConnectionPool(host='10.0.0.178', port=18123): Max retries exceeded with url: /?query_id=ef0df1b6-37c1-4680-8f3a-6b2a5c7e2d5f (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x110c75ee0>, 'Connection to 10.0.0.178 timed out. (connect timeout=10)')) executing HTTP request attempt 1 (http://10.0.0.178:18123)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 198, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 144, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/cli/main.py", line 440, in debug
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/task/debug.py", line 144, in run
+    connection_status = self.test_connection()
+                        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/task/debug.py", line 465, in test_connection
+    connection_result = self.attempt_connection(self.profile)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/task/debug.py", line 443, in attempt_connection
+    adapter.debug_query()
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/base/impl.py", line 477, in debug_query
+    self.execute("select 1 as id")
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt_common/record.py", line 538, in record_replay_wrapper
+    return func_to_record(*call_args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/base/impl.py", line 523, in execute
+    return self.connections.execute(sql=sql, auto_begin=auto_begin, fetch=fetch, limit=limit)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/clickhouse/connections.py", line 98, in execute
+    client = conn.handle
+             ^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/clickhouse/connections.py", line 47, in open
+    return cls.retry_connection(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/base/connections.py", line 254, in retry_connection
+    return cls.retry_connection(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/base/connections.py", line 237, in retry_connection
+    connection.handle = connect()
+                        ^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/clickhouse/connections.py", line 45, in connect
+    return get_db_client(credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/clickhouse/dbclient.py", line 76, in get_db_client
+    return ChHttpClient(credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/clickhouse/dbclient.py", line 102, in __init__
+    self._client = self._create_client(credentials)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/adapters/clickhouse/httpclient.py", line 116, in _create_client
+    return clickhouse_connect.get_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/__init__.py", line 388, in create_client
+    return HttpClient(
+           ^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/httpclient.py", line 223, in __init__
+    super().__init__(
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/client.py", line 234, in __init__
+    self._init_common_settings(resolved_tz_source)
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/httpclient.py", line 242, in _init_common_settings
+    super()._init_common_settings(tz_source)
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/client.py", line 241, in _init_common_settings
+    result = run_sync(init_sequence(config), self._execute_operation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/_backend/orchestration.py", line 221, in run_sync
+    response = execute(operation)
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/client.py", line 252, in _execute_operation
+    return self.command(operation.text, settings=settings, use_database=operation.use_database)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/_backendclient.py", line 145, in command
+    execution = self._backend.execute_command(bound_cmd, bind_params, data, external_data, runtime, transport_settings)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/_backend/http_sync.py", line 268, in execute_command
+    response = self.request(plan.payload, plan.params, plan.headers, plan.method, fields=plan.form_files, server_wait=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/clickhouse_connect/driver/_backend/http_sync.py", line 332, in request
+    response: HTTPResponse = cast(HTTPResponse, cast(PoolManager, self.http).request(method, url, **kwargs))
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/_request_methods.py", line 143, in request
+    return self.request_encode_body(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/_request_methods.py", line 278, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/poolmanager.py", line 459, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/connection.py", line 494, in request
+    self.endheaders()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1093, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/connection.py", line 325, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+KeyboardInterrupt
+
+[0m10:38:02.595099 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 35.389988, "process_in_blocks": "0", "process_kernel_time": 0.177766, "process_mem_max_rss": "124715008", "process_out_blocks": "0", "process_user_time": 0.791148}
+[0m10:38:02.598033 [debug] [MainThread]: Command `dbt debug` failed at 10:38:02.597731 after 35.39 seconds
+[0m10:38:02.599040 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m10:38:02.601091 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11040cda0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110279f40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110878b00>]}
+[0m10:38:02.602225 [debug] [MainThread]: Flushing usage events
+[0m10:38:12.315434 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106554320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f65430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f65160>]}
+
+
+============================== 10:38:12.318428 | b2e5cdd7-5257-4d41-9f0d-1e348fe9280d ==============================
+[0m10:38:12.318428 [info ] [MainThread]: Running with dbt=1.12.5
+[0m10:38:12.318705 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'use_colors': 'True', 'target_path': 'None', 'maximum_seed_size_mib': '1', 'profiles_dir': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail', 'static_parser': 'True', 'empty': 'None', 'log_path': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/logs', 'use_experimental_parser': 'False', 'log_format': 'default', 'indirect_selection': 'eager', 'quiet': 'False', 'write_json': 'True', 'debug': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'introspect': 'True', 'warn_error': 'None', 'no_print': 'None', 'log_cache_events': 'False', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'hints_enabled': 'True', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt debug'}
+[0m10:38:12.329403 [info ] [MainThread]: dbt version: 1.12.5
+[0m10:38:12.329619 [info ] [MainThread]: python version: 3.12.10
+[0m10:38:12.329739 [info ] [MainThread]: python path: /Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/bin/python3.12
+[0m10:38:12.329847 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit
+[0m10:38:12.360427 [info ] [MainThread]: Using profiles dir at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail
+[0m10:38:12.360673 [info ] [MainThread]: Using profiles.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/profiles.yml
+[0m10:38:12.360803 [info ] [MainThread]: Using dbt_project.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/dbt_project.yml
+[0m10:38:12.361116 [info ] [MainThread]: adapter type: clickhouse
+[0m10:38:12.361262 [info ] [MainThread]: adapter version: 1.10.3
+[0m10:38:12.401448 [info ] [MainThread]: Configuration:
+[0m10:38:12.401703 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:38:12.401839 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:38:12.401950 [info ] [MainThread]: Required dependencies:
+[0m10:38:12.402126 [debug] [MainThread]: Executing "git --help"
+[0m10:38:12.413334 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:38:12.413820 [debug] [MainThread]: STDERR: "b''"
+[0m10:38:12.413976 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:38:12.414110 [info ] [MainThread]: Connection:
+[0m10:38:12.414261 [info ] [MainThread]:   driver: None
+[0m10:38:12.414377 [info ] [MainThread]:   host: localhost
+[0m10:38:12.414532 [info ] [MainThread]:   port: 18123
+[0m10:38:12.414763 [info ] [MainThread]:   user: default
+[0m10:38:12.414878 [info ] [MainThread]:   schema: analytics_dev
+[0m10:38:12.414986 [info ] [MainThread]:   retries: 1
+[0m10:38:12.415103 [info ] [MainThread]:   cluster: None
+[0m10:38:12.415213 [info ] [MainThread]:   database_engine: None
+[0m10:38:12.415314 [info ] [MainThread]:   cluster_mode: False
+[0m10:38:12.415414 [info ] [MainThread]:   secure: False
+[0m10:38:12.415511 [info ] [MainThread]:   verify: True
+[0m10:38:12.415609 [info ] [MainThread]:   client_cert: None
+[0m10:38:12.415708 [info ] [MainThread]:   client_cert_key: None
+[0m10:38:12.415808 [info ] [MainThread]:   connect_timeout: 10
+[0m10:38:12.415912 [info ] [MainThread]:   send_receive_timeout: 300
+[0m10:38:12.416011 [info ] [MainThread]:   sync_request_timeout: 5
+[0m10:38:12.416105 [info ] [MainThread]:   compress_block_size: 1048576
+[0m10:38:12.416205 [info ] [MainThread]:   compression: 
+[0m10:38:12.416301 [info ] [MainThread]:   check_exchange: True
+[0m10:38:12.416407 [info ] [MainThread]:   custom_settings: None
+[0m10:38:12.416506 [info ] [MainThread]:   use_lw_deletes: False
+[0m10:38:12.416618 [info ] [MainThread]:   allow_automatic_deduplication: False
+[0m10:38:12.416724 [info ] [MainThread]:   tcp_keepalive: False
+[0m10:38:12.416821 [info ] [MainThread]:   reuse_connections: True
+[0m10:38:12.416924 [info ] [MainThread]:   server_host_name: None
+[0m10:38:12.417255 [info ] [MainThread]: Registered adapter: clickhouse=1.10.3
+[0m10:38:12.465085 [debug] [MainThread]: Acquiring new clickhouse connection 'debug'
+[0m10:38:12.465418 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:38:12.697097 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m10:38:12.698026 [info ] [MainThread]: [31m1 check failed:[0m
+[0m10:38:12.698517 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  Received ClickHouse exception, code: 194, server response: Code: 194. DB::Exception: default: Authentication failed: password is incorrect, or there is no user with such name
+  
+  If you use ClickHouse Cloud, the password can be reset at https://clickhouse.cloud/
+  on the settings page for the corresponding service.
+  
+  If you have installed ClickHouse and forgot password you can reset it in the configuration file.
+  The password for default user is typically located at /etc/clickhouse-server/users.d/default-password.xml
+  and deleting this file will reset the password.
+  See also /etc/clickhouse-server/users.xml on the server where ClickHouse is installed.
+  
+  . (REQUIRED_PASSWORD) (for url http://localhost:18123)
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m10:38:12.704569 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.4352438, "process_in_blocks": "0", "process_kernel_time": 0.149039, "process_mem_max_rss": "125681664", "process_out_blocks": "0", "process_user_time": 0.768092}
+[0m10:38:12.705562 [debug] [MainThread]: Command `dbt debug` failed at 10:38:12.705434 after 0.44 seconds
+[0m10:38:12.706006 [debug] [MainThread]: Connection 'debug' was left open.
+[0m10:38:12.706307 [debug] [MainThread]: On debug: No close available on handle
+[0m10:38:12.706662 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f65430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109463ef0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109332390>]}
+[0m10:38:12.707087 [debug] [MainThread]: Flushing usage events
+[0m10:38:13.383080 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:38:49.392487 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fa4fda0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fd093d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fd09100>]}
+
+
+============================== 10:38:49.395013 | 29882952-5580-4313-b460-b3df4399b385 ==============================
+[0m10:38:49.395013 [info ] [MainThread]: Running with dbt=1.12.5
+[0m10:38:49.395284 [debug] [MainThread]: running dbt with arguments {'hints_enabled': 'True', 'empty': 'None', 'static_parser': 'True', 'cache_selected_only': 'False', 'write_json': 'True', 'target_path': 'None', 'partial_parse': 'True', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'profiles_dir': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'no_print': 'None', 'fail_fast': 'False', 'quiet': 'False', 'introspect': 'True', 'version_check': 'True', 'debug': 'False', 'maximum_seed_size_mib': '1', 'log_format': 'default', 'log_path': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/logs', 'use_colors': 'True', 'invocation_command': 'dbt debug'}
+[0m10:38:49.404020 [info ] [MainThread]: dbt version: 1.12.5
+[0m10:38:49.404339 [info ] [MainThread]: python version: 3.12.10
+[0m10:38:49.404471 [info ] [MainThread]: python path: /Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/bin/python3.12
+[0m10:38:49.404585 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit
+[0m10:38:49.435053 [info ] [MainThread]: Using profiles dir at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail
+[0m10:38:49.435308 [info ] [MainThread]: Using profiles.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/profiles.yml
+[0m10:38:49.435451 [info ] [MainThread]: Using dbt_project.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/dbt_project.yml
+[0m10:38:49.435762 [info ] [MainThread]: adapter type: clickhouse
+[0m10:38:49.435926 [info ] [MainThread]: adapter version: 1.10.3
+[0m10:38:49.476499 [info ] [MainThread]: Configuration:
+[0m10:38:49.476741 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:38:49.476872 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:38:49.476985 [info ] [MainThread]: Required dependencies:
+[0m10:38:49.477183 [debug] [MainThread]: Executing "git --help"
+[0m10:38:49.488554 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:38:49.489177 [debug] [MainThread]: STDERR: "b''"
+[0m10:38:49.489353 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:38:49.489496 [info ] [MainThread]: Connection:
+[0m10:38:49.489662 [info ] [MainThread]:   driver: None
+[0m10:38:49.489771 [info ] [MainThread]:   host: localhost
+[0m10:38:49.489881 [info ] [MainThread]:   port: 18123
+[0m10:38:49.489977 [info ] [MainThread]:   user: admin
+[0m10:38:49.490074 [info ] [MainThread]:   schema: analytics_dev
+[0m10:38:49.490175 [info ] [MainThread]:   retries: 1
+[0m10:38:49.490275 [info ] [MainThread]:   cluster: None
+[0m10:38:49.490376 [info ] [MainThread]:   database_engine: None
+[0m10:38:49.490482 [info ] [MainThread]:   cluster_mode: False
+[0m10:38:49.490583 [info ] [MainThread]:   secure: False
+[0m10:38:49.490678 [info ] [MainThread]:   verify: True
+[0m10:38:49.490777 [info ] [MainThread]:   client_cert: None
+[0m10:38:49.490874 [info ] [MainThread]:   client_cert_key: None
+[0m10:38:49.490977 [info ] [MainThread]:   connect_timeout: 10
+[0m10:38:49.491073 [info ] [MainThread]:   send_receive_timeout: 300
+[0m10:38:49.491167 [info ] [MainThread]:   sync_request_timeout: 5
+[0m10:38:49.491262 [info ] [MainThread]:   compress_block_size: 1048576
+[0m10:38:49.491354 [info ] [MainThread]:   compression: 
+[0m10:38:49.491459 [info ] [MainThread]:   check_exchange: True
+[0m10:38:49.491559 [info ] [MainThread]:   custom_settings: None
+[0m10:38:49.491663 [info ] [MainThread]:   use_lw_deletes: False
+[0m10:38:49.491774 [info ] [MainThread]:   allow_automatic_deduplication: False
+[0m10:38:49.491882 [info ] [MainThread]:   tcp_keepalive: False
+[0m10:38:49.491978 [info ] [MainThread]:   reuse_connections: True
+[0m10:38:49.492078 [info ] [MainThread]:   server_host_name: None
+[0m10:38:49.492387 [info ] [MainThread]: Registered adapter: clickhouse=1.10.3
+[0m10:38:49.540067 [debug] [MainThread]: Acquiring new clickhouse connection 'debug'
+[0m10:38:49.540389 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:38:50.689456 [debug] [MainThread]: dbt_clickhouse adapter: On debug: select 1 as id...
+[0m10:38:50.766609 [debug] [MainThread]: dbt_clickhouse adapter: SQL status: OK in 0.08 seconds
+[0m10:38:50.813375 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m10:38:50.813694 [info ] [MainThread]: [32mAll checks passed![0m
+[0m10:38:50.816023 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 1.4714583, "process_in_blocks": "0", "process_kernel_time": 0.188576, "process_mem_max_rss": "131694592", "process_out_blocks": "0", "process_user_time": 0.819202}
+[0m10:38:50.816458 [debug] [MainThread]: Command `dbt debug` succeeded at 10:38:50.816383 after 1.47 seconds
+[0m10:38:50.816676 [debug] [MainThread]: Connection 'debug' was left open.
+[0m10:38:50.816844 [debug] [MainThread]: On debug: Close
+[0m10:38:50.817087 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118907920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118e93290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118e93260>]}
+[0m10:38:50.817314 [debug] [MainThread]: Flushing usage events
+[0m10:38:51.594683 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:39:51.226744 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106bc5760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107521400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107521130>]}
+
+
+============================== 10:39:51.229473 | b7a4295a-8f51-401c-aaff-78bcf4bb4131 ==============================
+[0m10:39:51.229473 [info ] [MainThread]: Running with dbt=1.12.5
+[0m10:39:51.229798 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'debug': 'False', 'indirect_selection': 'eager', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'maximum_seed_size_mib': '1', 'hints_enabled': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt debug', 'no_print': 'None', 'static_parser': 'True', 'empty': 'None', 'quiet': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'log_path': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/logs', 'warn_error': 'None', 'profiles_dir': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail', 'fail_fast': 'False', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'log_cache_events': 'False'}
+[0m10:39:51.239051 [info ] [MainThread]: dbt version: 1.12.5
+[0m10:39:51.239241 [info ] [MainThread]: python version: 3.12.10
+[0m10:39:51.239371 [info ] [MainThread]: python path: /Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/bin/python3.12
+[0m10:39:51.239561 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit
+[0m10:39:51.270352 [info ] [MainThread]: Using profiles dir at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail
+[0m10:39:51.270609 [info ] [MainThread]: Using profiles.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/profiles.yml
+[0m10:39:51.270756 [info ] [MainThread]: Using dbt_project.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/dbt_project.yml
+[0m10:39:51.271045 [info ] [MainThread]: adapter type: clickhouse
+[0m10:39:51.271191 [info ] [MainThread]: adapter version: 1.10.3
+[0m10:39:51.311306 [info ] [MainThread]: Configuration:
+[0m10:39:51.311542 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:39:51.311668 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:39:51.311787 [info ] [MainThread]: Required dependencies:
+[0m10:39:51.311967 [debug] [MainThread]: Executing "git --help"
+[0m10:39:51.330635 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:39:51.331063 [debug] [MainThread]: STDERR: "b''"
+[0m10:39:51.331193 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:39:51.331333 [info ] [MainThread]: Connection:
+[0m10:39:51.331479 [info ] [MainThread]:   driver: None
+[0m10:39:51.331588 [info ] [MainThread]:   host: localhost
+[0m10:39:51.331688 [info ] [MainThread]:   port: 18123
+[0m10:39:51.331785 [info ] [MainThread]:   user: admin
+[0m10:39:51.331881 [info ] [MainThread]:   schema: analytics_dev
+[0m10:39:51.331976 [info ] [MainThread]:   retries: 1
+[0m10:39:51.332077 [info ] [MainThread]:   cluster: None
+[0m10:39:51.332172 [info ] [MainThread]:   database_engine: None
+[0m10:39:51.332268 [info ] [MainThread]:   cluster_mode: False
+[0m10:39:51.332364 [info ] [MainThread]:   secure: False
+[0m10:39:51.332465 [info ] [MainThread]:   verify: True
+[0m10:39:51.332563 [info ] [MainThread]:   client_cert: None
+[0m10:39:51.332661 [info ] [MainThread]:   client_cert_key: None
+[0m10:39:51.332762 [info ] [MainThread]:   connect_timeout: 10
+[0m10:39:51.332858 [info ] [MainThread]:   send_receive_timeout: 300
+[0m10:39:51.332952 [info ] [MainThread]:   sync_request_timeout: 5
+[0m10:39:51.333056 [info ] [MainThread]:   compress_block_size: 1048576
+[0m10:39:51.333151 [info ] [MainThread]:   compression: 
+[0m10:39:51.333243 [info ] [MainThread]:   check_exchange: True
+[0m10:39:51.333337 [info ] [MainThread]:   custom_settings: None
+[0m10:39:51.333431 [info ] [MainThread]:   use_lw_deletes: False
+[0m10:39:51.333524 [info ] [MainThread]:   allow_automatic_deduplication: False
+[0m10:39:51.333617 [info ] [MainThread]:   tcp_keepalive: False
+[0m10:39:51.333710 [info ] [MainThread]:   reuse_connections: True
+[0m10:39:51.333802 [info ] [MainThread]:   server_host_name: None
+[0m10:39:51.334110 [info ] [MainThread]: Registered adapter: clickhouse=1.10.3
+[0m10:39:51.381704 [debug] [MainThread]: Acquiring new clickhouse connection 'debug'
+[0m10:39:51.381976 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:39:52.612249 [debug] [MainThread]: dbt_clickhouse adapter: On debug: select 1 as id...
+[0m10:39:52.690847 [debug] [MainThread]: dbt_clickhouse adapter: SQL status: OK in 0.08 seconds
+[0m10:39:52.737928 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m10:39:52.738236 [info ] [MainThread]: [32mAll checks passed![0m
+[0m10:39:52.740708 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 1.5603507, "process_in_blocks": "0", "process_kernel_time": 0.201626, "process_mem_max_rss": "127959040", "process_out_blocks": "0", "process_user_time": 0.837936}
+[0m10:39:52.741154 [debug] [MainThread]: Command `dbt debug` succeeded at 10:39:52.741078 after 1.56 seconds
+[0m10:39:52.741381 [debug] [MainThread]: Connection 'debug' was left open.
+[0m10:39:52.741555 [debug] [MainThread]: On debug: Close
+[0m10:39:52.741813 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b91880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107baf7a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107baf770>]}
+[0m10:39:52.742042 [debug] [MainThread]: Flushing usage events
+[0m10:39:53.464255 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:41:35.351429 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10684fec0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a5f0e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a5ee10>]}
+
+
+============================== 10:41:35.353870 | a6b514af-c89b-478b-8d7d-35117ff42ce5 ==============================
+[0m10:41:35.353870 [info ] [MainThread]: Running with dbt=1.12.5
+[0m10:41:35.354146 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'log_format': 'default', 'profiles_dir': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail', 'introspect': 'True', 'static_parser': 'True', 'quiet': 'False', 'debug': 'False', 'hints_enabled': 'True', 'write_json': 'True', 'invocation_command': 'dbt build --target dev', 'version_check': 'True', 'indirect_selection': 'eager', 'fail_fast': 'False', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'printer_width': '80', 'target_path': 'None', 'warn_error': 'None', 'empty': 'False', 'log_path': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/logs'}
+[0m10:41:35.456880 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a6b514af-c89b-478b-8d7d-35117ff42ce5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102a8a5d0>]}
+[0m10:41:35.481214 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a6b514af-c89b-478b-8d7d-35117ff42ce5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1067622a0>]}
+[0m10:41:35.481822 [info ] [MainThread]: Registered adapter: clickhouse=1.10.3
+[0m10:41:35.541874 [debug] [MainThread]: checksum: 3d229225290b4b8400ba0c7e468eb51813ce72b62e5c74c6a053ba5d9bb786ce, vars: {}, profile: turyan_retail, target: dev, version: 1.12.5
+[0m10:41:35.542534 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m10:41:35.542797 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'a6b514af-c89b-478b-8d7d-35117ff42ce5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a0b200>]}
+[0m10:41:35.962614 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.turyan_retail.staging
+[0m10:41:35.964314 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a6b514af-c89b-478b-8d7d-35117ff42ce5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105d797c0>]}
+[0m10:41:35.990811 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/manifest.json
+[0m10:41:35.995368 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/semantic_manifest.json
+[0m10:41:36.006685 [debug] [MainThread]: Wrote artifact OsiDocument to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/osi_document.json
+[0m10:41:36.020088 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a6b514af-c89b-478b-8d7d-35117ff42ce5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107ae9880>]}
+[0m10:41:36.020352 [info ] [MainThread]: Found 547 macros
+[0m10:41:36.021092 [warn ] [MainThread]: [[33mWARNING[0m]: Nothing to do. Try checking your model configs and model specification args
+[0m10:41:36.021342 [debug] [MainThread]: Command end result
+[0m10:41:36.036628 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/manifest.json
+[0m10:41:36.037994 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/semantic_manifest.json
+[0m10:41:36.039115 [debug] [MainThread]: Wrote artifact OsiDocument to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/osi_document.json
+[0m10:41:36.040666 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/run_results.json
+[0m10:41:36.042661 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 0.74001545, "process_in_blocks": "0", "process_kernel_time": 0.19163, "process_mem_max_rss": "130351104", "process_out_blocks": "0", "process_user_time": 1.257782}
+[0m10:41:36.042908 [debug] [MainThread]: Command `dbt build` succeeded at 10:41:36.042866 after 0.74 seconds
+[0m10:41:36.043078 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106990b60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a5d070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107964b30>]}
+[0m10:41:36.043250 [debug] [MainThread]: Flushing usage events
+[0m10:41:36.891434 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:46:37.918966 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10afb94c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bc0d490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bc0d1f0>]}
+
+
+============================== 10:46:37.922097 | fd04073c-f61b-4b6d-b91a-2cde15da97f8 ==============================
+[0m10:46:37.922097 [info ] [MainThread]: Running with dbt=1.12.5
+[0m10:46:37.922405 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'introspect': 'True', 'log_format': 'default', 'use_colors': 'True', 'fail_fast': 'False', 'debug': 'False', 'partial_parse': 'True', 'log_cache_events': 'False', 'warn_error': 'None', 'use_experimental_parser': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'target_path': 'None', 'log_path': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/logs', 'hints_enabled': 'True', 'no_print': 'None', 'invocation_command': 'dbt debug', 'maximum_seed_size_mib': '1', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'static_parser': 'True', 'profiles_dir': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail', 'quiet': 'False'}
+[0m10:46:37.932171 [info ] [MainThread]: dbt version: 1.12.5
+[0m10:46:37.932432 [info ] [MainThread]: python version: 3.12.10
+[0m10:46:37.932583 [info ] [MainThread]: python path: /Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/bin/python3.12
+[0m10:46:37.932699 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit
+[0m10:46:37.966217 [info ] [MainThread]: Using profiles dir at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail
+[0m10:46:37.966466 [info ] [MainThread]: Using profiles.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/profiles.yml
+[0m10:46:37.966598 [info ] [MainThread]: Using dbt_project.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/dbt_project.yml
+[0m10:46:37.966926 [info ] [MainThread]: adapter type: clickhouse
+[0m10:46:37.967043 [info ] [MainThread]: adapter version: 1.10.3
+[0m10:46:38.012779 [info ] [MainThread]: Configuration:
+[0m10:46:38.013059 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:46:38.013248 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:46:38.013376 [info ] [MainThread]: Required dependencies:
+[0m10:46:38.013574 [debug] [MainThread]: Executing "git --help"
+[0m10:46:38.038119 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:46:38.038656 [debug] [MainThread]: STDERR: "b''"
+[0m10:46:38.038822 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:46:38.038972 [info ] [MainThread]: Connection:
+[0m10:46:38.039126 [info ] [MainThread]:   driver: None
+[0m10:46:38.039237 [info ] [MainThread]:   host: localhost
+[0m10:46:38.039341 [info ] [MainThread]:   port: 18123
+[0m10:46:38.039441 [info ] [MainThread]:   user: admin
+[0m10:46:38.039539 [info ] [MainThread]:   schema: analytics_dev
+[0m10:46:38.039638 [info ] [MainThread]:   retries: 1
+[0m10:46:38.039740 [info ] [MainThread]:   cluster: None
+[0m10:46:38.039839 [info ] [MainThread]:   database_engine: None
+[0m10:46:38.039939 [info ] [MainThread]:   cluster_mode: False
+[0m10:46:38.040039 [info ] [MainThread]:   secure: False
+[0m10:46:38.040134 [info ] [MainThread]:   verify: True
+[0m10:46:38.040233 [info ] [MainThread]:   client_cert: None
+[0m10:46:38.040331 [info ] [MainThread]:   client_cert_key: None
+[0m10:46:38.040428 [info ] [MainThread]:   connect_timeout: 10
+[0m10:46:38.040524 [info ] [MainThread]:   send_receive_timeout: 300
+[0m10:46:38.040687 [info ] [MainThread]:   sync_request_timeout: 5
+[0m10:46:38.040866 [info ] [MainThread]:   compress_block_size: 1048576
+[0m10:46:38.040990 [info ] [MainThread]:   compression: 
+[0m10:46:38.041102 [info ] [MainThread]:   check_exchange: True
+[0m10:46:38.041206 [info ] [MainThread]:   custom_settings: None
+[0m10:46:38.041306 [info ] [MainThread]:   use_lw_deletes: False
+[0m10:46:38.041408 [info ] [MainThread]:   allow_automatic_deduplication: False
+[0m10:46:38.041518 [info ] [MainThread]:   tcp_keepalive: False
+[0m10:46:38.041617 [info ] [MainThread]:   reuse_connections: True
+[0m10:46:38.041717 [info ] [MainThread]:   server_host_name: None
+[0m10:46:38.042054 [info ] [MainThread]: Registered adapter: clickhouse=1.10.3
+[0m10:46:38.092607 [debug] [MainThread]: Acquiring new clickhouse connection 'debug'
+[0m10:46:38.092998 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:46:39.243944 [debug] [MainThread]: dbt_clickhouse adapter: On debug: select 1 as id...
+[0m10:46:39.335102 [debug] [MainThread]: dbt_clickhouse adapter: SQL status: OK in 0.09 seconds
+[0m10:46:39.385561 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m10:46:39.385878 [info ] [MainThread]: [32mAll checks passed![0m
+[0m10:46:39.389437 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 1.5250322, "process_in_blocks": "0", "process_kernel_time": 0.214998, "process_mem_max_rss": "128548864", "process_out_blocks": "0", "process_user_time": 0.904978}
+[0m10:46:39.389836 [debug] [MainThread]: Command `dbt debug` succeeded at 10:46:39.389767 after 1.53 seconds
+[0m10:46:39.390035 [debug] [MainThread]: Connection 'debug' was left open.
+[0m10:46:39.390233 [debug] [MainThread]: On debug: Close
+[0m10:46:39.390515 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b82e060>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c50f320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c50f2f0>]}
+[0m10:46:39.390887 [debug] [MainThread]: Flushing usage events
+[0m10:46:40.342618 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:09:23.659957 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10798e450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ba09310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ba09070>]}
+
+
+============================== 11:09:23.662764 | fb03bbc6-b3be-4129-b345-3eed13dc1a7f ==============================
+[0m11:09:23.662764 [info ] [MainThread]: Running with dbt=1.12.5
+[0m11:09:23.663048 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'profiles_dir': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail', 'log_format': 'default', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'introspect': 'True', 'indirect_selection': 'eager', 'no_print': 'None', 'version_check': 'True', 'fail_fast': 'False', 'target_path': 'None', 'hints_enabled': 'True', 'warn_error': 'None', 'empty': 'None', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'log_path': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/logs', 'debug': 'False', 'use_colors': 'True', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'maximum_seed_size_mib': '1'}
+[0m11:09:23.671581 [info ] [MainThread]: dbt version: 1.12.5
+[0m11:09:23.671801 [info ] [MainThread]: python version: 3.12.10
+[0m11:09:23.671933 [info ] [MainThread]: python path: /Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/bin/python3.12
+[0m11:09:23.672044 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit
+[0m11:09:23.702106 [info ] [MainThread]: Using profiles dir at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail
+[0m11:09:23.702348 [info ] [MainThread]: Using profiles.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/profiles.yml
+[0m11:09:23.702479 [info ] [MainThread]: Using dbt_project.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/dbt_project.yml
+[0m11:09:23.702799 [info ] [MainThread]: adapter type: clickhouse
+[0m11:09:23.702970 [info ] [MainThread]: adapter version: 1.10.3
+[0m11:09:23.743869 [info ] [MainThread]: Configuration:
+[0m11:09:23.744135 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:09:23.744271 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:09:23.744385 [info ] [MainThread]: Required dependencies:
+[0m11:09:23.744574 [debug] [MainThread]: Executing "git --help"
+[0m11:09:23.757538 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:09:23.758043 [debug] [MainThread]: STDERR: "b''"
+[0m11:09:23.758188 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:09:23.758322 [info ] [MainThread]: Connection:
+[0m11:09:23.758468 [info ] [MainThread]:   driver: None
+[0m11:09:23.758577 [info ] [MainThread]:   host: localhost
+[0m11:09:23.758680 [info ] [MainThread]:   port: 18123
+[0m11:09:23.758778 [info ] [MainThread]:   user: admin
+[0m11:09:23.758874 [info ] [MainThread]:   schema: analytics_dev
+[0m11:09:23.758982 [info ] [MainThread]:   retries: 1
+[0m11:09:23.759087 [info ] [MainThread]:   cluster: None
+[0m11:09:23.759182 [info ] [MainThread]:   database_engine: None
+[0m11:09:23.759282 [info ] [MainThread]:   cluster_mode: False
+[0m11:09:23.759377 [info ] [MainThread]:   secure: False
+[0m11:09:23.759475 [info ] [MainThread]:   verify: True
+[0m11:09:23.759575 [info ] [MainThread]:   client_cert: None
+[0m11:09:23.759676 [info ] [MainThread]:   client_cert_key: None
+[0m11:09:23.759777 [info ] [MainThread]:   connect_timeout: 10
+[0m11:09:23.759875 [info ] [MainThread]:   send_receive_timeout: 300
+[0m11:09:23.759973 [info ] [MainThread]:   sync_request_timeout: 5
+[0m11:09:23.760072 [info ] [MainThread]:   compress_block_size: 1048576
+[0m11:09:23.760170 [info ] [MainThread]:   compression: 
+[0m11:09:23.760265 [info ] [MainThread]:   check_exchange: True
+[0m11:09:23.760359 [info ] [MainThread]:   custom_settings: None
+[0m11:09:23.760456 [info ] [MainThread]:   use_lw_deletes: False
+[0m11:09:23.760550 [info ] [MainThread]:   allow_automatic_deduplication: False
+[0m11:09:23.760646 [info ] [MainThread]:   tcp_keepalive: False
+[0m11:09:23.760741 [info ] [MainThread]:   reuse_connections: True
+[0m11:09:23.760834 [info ] [MainThread]:   server_host_name: None
+[0m11:09:23.761116 [info ] [MainThread]: Registered adapter: clickhouse=1.10.3
+[0m11:09:23.810636 [debug] [MainThread]: Acquiring new clickhouse connection 'debug'
+[0m11:09:23.810966 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:09:25.002748 [debug] [MainThread]: dbt_clickhouse adapter: On debug: select 1 as id...
+[0m11:09:25.082208 [debug] [MainThread]: dbt_clickhouse adapter: SQL status: OK in 0.08 seconds
+[0m11:09:25.128326 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m11:09:25.128679 [info ] [MainThread]: [32mAll checks passed![0m
+[0m11:09:25.166048 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 1.552836, "process_in_blocks": "0", "process_kernel_time": 0.195656, "process_mem_max_rss": "131137536", "process_out_blocks": "0", "process_user_time": 0.826499}
+[0m11:09:25.166621 [debug] [MainThread]: Command `dbt debug` succeeded at 11:09:25.166547 after 1.55 seconds
+[0m11:09:25.166855 [debug] [MainThread]: Connection 'debug' was left open.
+[0m11:09:25.167032 [debug] [MainThread]: On debug: Close
+[0m11:09:25.167313 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c874ec0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cc0b3e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cc0b3b0>]}
+[0m11:09:25.167564 [debug] [MainThread]: Flushing usage events
+[0m11:09:26.199574 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:17:42.319345 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1106f5580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112109310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112109070>]}
+
+
+============================== 11:17:42.323454 | c1013245-b0dc-4f7b-a289-9cbdc751e4e1 ==============================
+[0m11:17:42.323454 [info ] [MainThread]: Running with dbt=1.12.5
+[0m11:17:42.323731 [debug] [MainThread]: running dbt with arguments {'log_path': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/logs', 'indirect_selection': 'eager', 'warn_error': 'None', 'version_check': 'True', 'hints_enabled': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'log_cache_events': 'False', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'partial_parse': 'True', 'empty': 'None', 'cache_selected_only': 'False', 'no_print': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'profiles_dir': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail', 'maximum_seed_size_mib': '1', 'fail_fast': 'False', 'log_format': 'default', 'printer_width': '80', 'quiet': 'False', 'debug': 'False', 'invocation_command': 'dbt debug'}
+[0m11:17:42.331775 [info ] [MainThread]: dbt version: 1.12.5
+[0m11:17:42.331992 [info ] [MainThread]: python version: 3.12.10
+[0m11:17:42.332117 [info ] [MainThread]: python path: /Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/bin/python3.12
+[0m11:17:42.332228 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit
+[0m11:17:42.362400 [info ] [MainThread]: Using profiles dir at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail
+[0m11:17:42.362643 [info ] [MainThread]: Using profiles.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/profiles.yml
+[0m11:17:42.362765 [info ] [MainThread]: Using dbt_project.yml file at /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/dbt_project.yml
+[0m11:17:42.363080 [info ] [MainThread]: adapter type: clickhouse
+[0m11:17:42.363250 [info ] [MainThread]: adapter version: 1.10.3
+[0m11:17:42.403524 [info ] [MainThread]: Configuration:
+[0m11:17:42.403792 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:17:42.403922 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:17:42.404040 [info ] [MainThread]: Required dependencies:
+[0m11:17:42.404242 [debug] [MainThread]: Executing "git --help"
+[0m11:17:42.419537 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:17:42.420084 [debug] [MainThread]: STDERR: "b''"
+[0m11:17:42.420297 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:17:42.420536 [info ] [MainThread]: Connection:
+[0m11:17:42.420770 [info ] [MainThread]:   driver: None
+[0m11:17:42.420993 [info ] [MainThread]:   host: localhost
+[0m11:17:42.421301 [info ] [MainThread]:   port: 18123
+[0m11:17:42.421473 [info ] [MainThread]:   user: admin
+[0m11:17:42.421587 [info ] [MainThread]:   schema: analytics_dev
+[0m11:17:42.421695 [info ] [MainThread]:   retries: 1
+[0m11:17:42.421828 [info ] [MainThread]:   cluster: None
+[0m11:17:42.422025 [info ] [MainThread]:   database_engine: None
+[0m11:17:42.422156 [info ] [MainThread]:   cluster_mode: False
+[0m11:17:42.422263 [info ] [MainThread]:   secure: False
+[0m11:17:42.422381 [info ] [MainThread]:   verify: True
+[0m11:17:42.422540 [info ] [MainThread]:   client_cert: None
+[0m11:17:42.422712 [info ] [MainThread]:   client_cert_key: None
+[0m11:17:42.422844 [info ] [MainThread]:   connect_timeout: 10
+[0m11:17:42.422997 [info ] [MainThread]:   send_receive_timeout: 300
+[0m11:17:42.423123 [info ] [MainThread]:   sync_request_timeout: 5
+[0m11:17:42.423256 [info ] [MainThread]:   compress_block_size: 1048576
+[0m11:17:42.423382 [info ] [MainThread]:   compression: 
+[0m11:17:42.423563 [info ] [MainThread]:   check_exchange: True
+[0m11:17:42.423729 [info ] [MainThread]:   custom_settings: None
+[0m11:17:42.423832 [info ] [MainThread]:   use_lw_deletes: False
+[0m11:17:42.423970 [info ] [MainThread]:   allow_automatic_deduplication: False
+[0m11:17:42.424142 [info ] [MainThread]:   tcp_keepalive: False
+[0m11:17:42.424247 [info ] [MainThread]:   reuse_connections: True
+[0m11:17:42.424349 [info ] [MainThread]:   server_host_name: None
+[0m11:17:42.424714 [info ] [MainThread]: Registered adapter: clickhouse=1.10.3
+[0m11:17:42.483540 [debug] [MainThread]: Acquiring new clickhouse connection 'debug'
+[0m11:17:42.483873 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:17:43.750723 [debug] [MainThread]: dbt_clickhouse adapter: On debug: select 1 as id...
+[0m11:17:43.831042 [debug] [MainThread]: dbt_clickhouse adapter: SQL status: OK in 0.08 seconds
+[0m11:17:43.878347 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m11:17:43.878654 [info ] [MainThread]: [32mAll checks passed![0m
+[0m11:17:43.881001 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 1.6103544, "process_in_blocks": "0", "process_kernel_time": 0.199364, "process_mem_max_rss": "130220032", "process_out_blocks": "0", "process_user_time": 0.848417}
+[0m11:17:43.881350 [debug] [MainThread]: Command `dbt debug` succeeded at 11:17:43.881290 after 1.61 seconds
+[0m11:17:43.881533 [debug] [MainThread]: Connection 'debug' was left open.
+[0m11:17:43.881691 [debug] [MainThread]: On debug: Close
+[0m11:17:43.881935 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10318a4b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112674ec0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1129cf590>]}
+[0m11:17:43.882154 [debug] [MainThread]: Flushing usage events
+[0m11:17:44.912603 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:25:58.683613 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108caacc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c55eea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c55ec00>]}
+
+
+============================== 11:25:58.686485 | 25e3f793-bc6f-4258-a708-b37b996ba237 ==============================
+[0m11:25:58.686485 [info ] [MainThread]: Running with dbt=1.12.5
+[0m11:25:58.686781 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'introspect': 'True', 'empty': 'False', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'log_path': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/logs', 'version_check': 'True', 'use_experimental_parser': 'False', 'maximum_seed_size_mib': '1', 'log_format': 'default', 'fail_fast': 'False', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'invocation_command': 'dbt build', 'warn_error': 'None', 'profiles_dir': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail', 'hints_enabled': 'True', 'target_path': 'None', 'use_colors': 'True', 'indirect_selection': 'eager', 'no_print': 'None', 'quiet': 'False', 'cache_selected_only': 'False', 'write_json': 'True'}
+[0m11:25:58.770724 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '25e3f793-bc6f-4258-a708-b37b996ba237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c623170>]}
+[0m11:25:58.794736 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '25e3f793-bc6f-4258-a708-b37b996ba237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c6ded50>]}
+[0m11:25:58.795611 [info ] [MainThread]: Registered adapter: clickhouse=1.10.3
+[0m11:25:58.859345 [debug] [MainThread]: checksum: 3d229225290b4b8400ba0c7e468eb51813ce72b62e5c74c6a053ba5d9bb786ce, vars: {}, profile: turyan_retail, target: dev, version: 1.12.5
+[0m11:25:58.888003 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m11:25:58.888275 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '25e3f793-bc6f-4258-a708-b37b996ba237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cc192e0>]}
+[0m11:25:59.449456 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '25e3f793-bc6f-4258-a708-b37b996ba237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c856f30>]}
+[0m11:25:59.487395 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/manifest.json
+[0m11:25:59.489176 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/semantic_manifest.json
+[0m11:25:59.498661 [debug] [MainThread]: Wrote artifact OsiDocument to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/osi_document.json
+[0m11:25:59.511428 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '25e3f793-bc6f-4258-a708-b37b996ba237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d9cc050>]}
+[0m11:25:59.511652 [info ] [MainThread]: Found 2 models, 1 source, 547 macros
+[0m11:25:59.512582 [info ] [MainThread]: 
+[0m11:25:59.512737 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:25:59.512854 [info ] [MainThread]: 
+[0m11:25:59.513074 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m11:25:59.515591 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m11:25:59.519368 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:26:00.647288 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "turyan_retail", "target_name": "dev", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m11:26:00.721207 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
+[0m11:26:00.743998 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_, now list__analytics_dev)
+[0m11:26:00.746923 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__analytics_dev: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "turyan_retail", "target_name": "dev", "connection_name": "list__analytics_dev"} */
+with mv_sources as (
+      -- Find all MVs and their target tables (database and name of the MV, plus the SELECT SQL)
+      select
+        name as mv_name,
+        database as mv_database,
+        any(as_select) as mv_sql,any(replaceRegexpOne(create_table_query, '.*TO\\s+`\x3F([^`\\s(]+)`\x3F\\.`\x3F([^`\\s(]+)`\x3F.*', '\\1.\\2')) as target_fqn
+      
+      from system.tables
+      
+      where engine = 'MaterializedView'
+        and create_table_query like '%TO %'
+      group by mv_name, mv_database
+    )
+    select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        t.engine = 'MaterializedView', 'materialized_view',
+        t.engine = 'View', 'view',
+        t.engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,
+      groupArrayIf(
+        map('schema', mv_sources.mv_database, 'name', mv_sources.mv_name, 'sql', mv_sources.mv_sql),
+        mv_sources.mv_name != ''
+      ) as mvs_pointing_to_it,
+      -- The refresh clause of a refreshable MV sits between the view name and the TO clause,
+      -- e.g. CREATE MATERIALIZED VIEW db.mv REFRESH EVERY 2 MINUTE [APPEND] TO db.target ...
+      max(position(substring(t.create_table_query, 1, position(t.create_table_query, ' TO ')), ' REFRESH ')) > 0 as is_refreshable,
+      max(position(substring(t.create_table_query, 1, position(t.create_table_query, ' TO ')), ' APPEND')) > 0 as refreshable_append,0 as is_on_cluster
+        from system.tables as t
+      
+        join system.databases as db on t.database = db.name
+        left join mv_sources on mv_sources.target_fqn = concat(t.database, '.', t.name)
+      where schema = 'analytics_dev'
+      group by name, schema, type, db_engine
+
+  ...
+[0m11:26:00.924631 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.18 seconds
+[0m11:26:00.925500 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '25e3f793-bc6f-4258-a708-b37b996ba237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d816f00>]}
+[0m11:26:00.927211 [debug] [Thread-1 (]: Began running node model.turyan_retail.stg_pos_test
+[0m11:26:00.927493 [info ] [Thread-1 (]: 1 of 2 START sql view model `analytics_dev`.`stg_pos_test` ..................... [RUN]
+[0m11:26:00.927726 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list__analytics_dev, now model.turyan_retail.stg_pos_test)
+[0m11:26:00.927885 [debug] [Thread-1 (]: Began compiling node model.turyan_retail.stg_pos_test
+[0m11:26:00.931139 [debug] [Thread-1 (]: Writing injected SQL for node "model.turyan_retail.stg_pos_test"
+[0m11:26:00.931797 [debug] [Thread-1 (]: Began executing node model.turyan_retail.stg_pos_test
+[0m11:26:00.939213 [debug] [Thread-1 (]: Creating new relation stg_pos_test
+[0m11:26:00.947692 [debug] [Thread-1 (]: Writing runtime sql for node "model.turyan_retail.stg_pos_test"
+[0m11:26:00.948479 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.turyan_retail.stg_pos_test: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "turyan_retail", "target_name": "dev", "node_id": "model.turyan_retail.stg_pos_test"} */
+
+
+  create or replace view `analytics_dev`.`stg_pos_test` 
+  
+    
+  
+  
+    
+    
+  as (
+    -- models/staging/stg_pos_test.sql
+select
+    transaction_id,
+    store_code,
+    pos_sku,
+    customer_id,
+    quantity,
+    unit_price,
+    quantity * unit_price as line_total,
+    transaction_date,
+    updated_at
+from `raw_dev`.`pos_test`
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m11:26:01.031274 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.08 seconds
+[0m11:26:01.043046 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '25e3f793-bc6f-4258-a708-b37b996ba237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d9ed130>]}
+[0m11:26:01.043466 [info ] [Thread-1 (]: 1 of 2 OK created sql view model `analytics_dev`.`stg_pos_test` ................ [[32mOK[0m in 0.11s]
+[0m11:26:01.043878 [debug] [Thread-1 (]: Finished running node model.turyan_retail.stg_pos_test
+[0m11:26:01.044337 [debug] [Thread-1 (]: Began running node model.turyan_retail.mart_store_revenue
+[0m11:26:01.044691 [info ] [Thread-1 (]: 2 of 2 START sql table model `analytics_dev`.`mart_store_revenue` .............. [RUN]
+[0m11:26:01.044989 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.turyan_retail.stg_pos_test, now model.turyan_retail.mart_store_revenue)
+[0m11:26:01.045189 [debug] [Thread-1 (]: Began compiling node model.turyan_retail.mart_store_revenue
+[0m11:26:01.046197 [debug] [Thread-1 (]: Writing injected SQL for node "model.turyan_retail.mart_store_revenue"
+[0m11:26:01.046712 [debug] [Thread-1 (]: Began executing node model.turyan_retail.mart_store_revenue
+[0m11:26:01.062737 [debug] [Thread-1 (]: Creating new relation mart_store_revenue
+[0m11:26:01.075935 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.turyan_retail.mart_store_revenue: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "turyan_retail", "target_name": "dev", "node_id": "model.turyan_retail.mart_store_revenue"} */
+
+        
+
+    
+        create table `analytics_dev`.`mart_store_revenue`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS replicated_deduplication_window='0'
+
+                    
+          empty
+          as (
+            SELECT 
+    store_code,
+    count(*) as transaction_count,
+    sum(quantity) as units_sold,
+    round(sum(line_total),2) as total_revenue
+FROM `analytics_dev`.`stg_pos_test`
+GROUP BY store_code
+ORDER BY total_revenue
+          )
+        
+    ...
+[0m11:26:01.162510 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.09 seconds
+[0m11:26:01.178683 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.turyan_retail.mart_store_revenue: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "turyan_retail", "target_name": "dev", "node_id": "model.turyan_retail.mart_store_revenue"} */
+
+    select name, type from system.columns where table = 'mart_store_revenue'
+    
+      
+        and database = 'analytics_dev'
+      
+    
+    order by position
+  ...
+[0m11:26:01.253714 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
+[0m11:26:01.257116 [debug] [Thread-1 (]: Writing runtime sql for node "model.turyan_retail.mart_store_revenue"
+[0m11:26:01.258032 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.turyan_retail.mart_store_revenue: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "turyan_retail", "target_name": "dev", "node_id": "model.turyan_retail.mart_store_revenue"} */
+
+  
+    
+    
+    
+        
+
+
+        
+  
+
+  insert into `analytics_dev`.`mart_store_revenue`
+        ("store_code", "transaction_count", "units_sold", "total_revenue")SELECT 
+    store_code,
+    count(*) as transaction_count,
+    sum(quantity) as units_sold,
+    round(sum(line_total),2) as total_revenue
+FROM `analytics_dev`.`stg_pos_test`
+GROUP BY store_code
+ORDER BY total_revenue
+  ...
+[0m11:26:01.352728 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.09 seconds
+[0m11:26:01.357121 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '25e3f793-bc6f-4258-a708-b37b996ba237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10db39730>]}
+[0m11:26:01.358060 [info ] [Thread-1 (]: 2 of 2 OK created sql table model `analytics_dev`.`mart_store_revenue` ......... [[32mOK[0m in 0.31s]
+[0m11:26:01.358769 [debug] [Thread-1 (]: Finished running node model.turyan_retail.mart_store_revenue
+[0m11:26:01.360247 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:26:01.360641 [debug] [MainThread]: Connection 'model.turyan_retail.mart_store_revenue' was left open.
+[0m11:26:01.361006 [debug] [MainThread]: On model.turyan_retail.mart_store_revenue: Close
+[0m11:26:01.361506 [info ] [MainThread]: 
+[0m11:26:01.361839 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 1.85 seconds (1.85s).
+[0m11:26:01.362698 [debug] [MainThread]: Command end result
+[0m11:26:01.392789 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/manifest.json
+[0m11:26:01.395032 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/semantic_manifest.json
+[0m11:26:01.396682 [debug] [MainThread]: Wrote artifact OsiDocument to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/osi_document.json
+[0m11:26:01.401234 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/run_results.json
+[0m11:26:01.401419 [info ] [MainThread]: 
+[0m11:26:01.401657 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:26:01.401814 [info ] [MainThread]: 
+[0m11:26:01.401991 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=2
+[0m11:26:01.404652 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 2.7755036, "process_in_blocks": "0", "process_kernel_time": 0.253775, "process_mem_max_rss": "147210240", "process_out_blocks": "0", "process_user_time": 1.702041}
+[0m11:26:01.405068 [debug] [MainThread]: Command `dbt build` succeeded at 11:26:01.405006 after 2.78 seconds
+[0m11:26:01.405325 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b8f38f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d880b30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cf14bc0>]}
+[0m11:26:01.405544 [debug] [MainThread]: Flushing usage events
+[0m11:26:02.282727 [debug] [MainThread]: An error was encountered while trying to flush usage events
