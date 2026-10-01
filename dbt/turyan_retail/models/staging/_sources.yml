@@ -2,7 +2,13 @@ version: 2
 
 
 sources:
+  - name: raw
+    database: raw
+    tables:
+      - name: pos_test
+
   - name: raw_dev
     database: raw_dev
     tables:
       - name: pos_test
+      - name: pos_transactions
