@@ -155,7 +155,7 @@ with DAG("smoke_test_pos", start_date=datetime(2026, 9, 1, tzinfo=BAKU_TZ),
                             "CH_HOST": "{{ var.value.ch_host }}",
                             "CH_PORT": "{{ var.value.ch_port }}",
                             "CH_USER": "{{ var.value.ch_user }}",
-                            "CH_PASSWORF": "{{ var.value.ch_password }}"
+                            "CH_PASSWORD": "{{ var.value.ch_password }}"
                         },
                         append_env = True
                 )
