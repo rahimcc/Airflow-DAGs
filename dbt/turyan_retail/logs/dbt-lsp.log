@@ -1410,3 +1410,64 @@ Processed: 2 models
 Summary: 2 total | 2 success
 09:10:40.103021 [info ]: Cached model count updated: 2 models (accurate)
 09:10:40.442739 [info ]: Loading profiles.yml
+==================== 2026-10-01T09:27:46.370317Z | eef6005f-2dc3-4738-a319-5be05af499d3 ====================
+09:27:46.371780 [info ]: Started loading project
+09:27:46.373431 [info ]: Loading profiles.yml
+09:27:46.400882 [info ]: Started parsing
+09:27:46.454651 [info ]: Finished loading project [  0.08s]
+09:27:46.454998 [debug]: Finished parsing models/staging/_sources.yml [  0.00s]
+09:27:46.455788 [debug]: Finished parsing models/staging/stg_pos_test.sql [  0.00s]
+09:27:46.563755 [info ]: Finished parsing [  0.16s]
+09:27:46.565148 [info ]: Cached model count updated: 2 models (estimate)
+09:27:46.565158 [info ]: Cached model count updated: 2 models (accurate)
+09:27:46.565178 [info ]: Started scheduling
+09:27:46.565662 [info ]: Finished scheduling [  0.00s]
+09:27:46.565672 [debug]: Compilation - 1 nodes selected: {"model.turyan_retail.stg_pos_test"}
+09:27:46.566394 [info ]: Started building task graph
+09:27:46.566417 [info ]: Finished building task graph [  0.00s]
+09:27:46.568206 [info ]: Started rendering (1 nodes)
+09:27:46.568215 [info ]: Started model analytics_dev.stg_pos_test
+09:27:46.568223 [debug]: Started rendering model analytics_dev.stg_pos_test
+09:27:46.568914 [debug]: Compiled SQL for node model.turyan_retail.stg_pos_test at target/.lsp/compiled/turyan_retail/models/staging/stg_pos_test.sql
+09:27:46.568975 [debug]: Finished rendering [  0.00s] model analytics_dev.stg_pos_test [success]
+09:27:46.568984 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+09:27:46.568988 [info ]:  Succeeded model analytics_dev.stg_pos_test (view) [1 of 1 in 0.00s]
+09:27:46.571606 [info ]: Started scheduling
+09:27:46.571649 [info ]: Finished scheduling [  0.00s]
+09:27:46.572026 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [201ms]
+Processed: 1 model
+Summary: 1 total | 1 success
+09:27:46.572066 [info ]: Cached model count updated: 2 models (accurate)
+==================== 2026-10-01T09:27:47.738325Z | f32725e2-887e-46f6-8317-dd80ba93397d ====================
+09:27:47.738419 [info ]: Started loading project
+09:27:47.738775 [info ]: Loading profiles.yml
+09:27:47.741773 [info ]: Finished loading project [  0.00s]
+09:27:47.759890 [info ]: Cached model count updated: 2 models (estimate)
+09:27:47.759924 [info ]: Cached model count updated: 2 models (accurate)
+09:27:47.759961 [info ]: Started scheduling
+09:27:47.760038 [info ]: Finished scheduling [  0.00s]
+09:27:47.760056 [debug]: Compilation - 2 nodes selected: {"model.turyan_retail.mart_store_revenue", "model.turyan_retail.stg_pos_test"}
+09:27:47.761270 [info ]: Started building task graph
+09:27:47.761319 [info ]: Finished building task graph [  0.00s]
+09:27:47.762573 [info ]: Started rendering (2 nodes)
+09:27:47.762593 [info ]: Started model analytics_dev.mart_store_revenue
+09:27:47.762607 [debug]: Started rendering model analytics_dev.mart_store_revenue
+09:27:47.762635 [info ]: Started model analytics_dev.stg_pos_test
+09:27:47.762639 [debug]: Started rendering model analytics_dev.stg_pos_test
+09:27:47.763203 [debug]: Compiled SQL for node model.turyan_retail.stg_pos_test at target/.lsp/compiled/turyan_retail/models/staging/stg_pos_test.sql
+09:27:47.763349 [debug]: Finished rendering [  0.00s] model analytics_dev.stg_pos_test [success]
+09:27:47.763395 [info ]:  Succeeded model analytics_dev.stg_pos_test (view) [2 of 2 in 0.00s]
+09:27:47.763424 [debug]: Compiled SQL for node model.turyan_retail.mart_store_revenue at target/.lsp/compiled/turyan_retail/models/marts/mart_store_revenue.sql
+09:27:47.763535 [debug]: Finished rendering [  0.00s] model analytics_dev.mart_store_revenue [success]
+09:27:47.763547 [info ]: Finished rendering [  0.00s] (2 nodes, 0 skipped, 0 errors)
+09:27:47.763552 [info ]:  Succeeded model analytics_dev.mart_store_revenue (table) [1 of 2 in 0.00s]
+09:27:47.769900 [info ]: Started scheduling
+09:27:47.769980 [info ]: Finished scheduling [  0.00s]
+09:27:47.770059 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [31ms]
+Processed: 2 models
+Summary: 2 total | 2 success
+09:27:47.770192 [info ]: Cached model count updated: 2 models (accurate)
