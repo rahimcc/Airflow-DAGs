@@ -1274,3 +1274,139 @@ Finished 'compile' successfully for target 'dev' [26ms]
 Processed: 2 models
 Summary: 2 total | 2 success
 08:22:10.181539 [info ]: Cached model count updated: 2 models (accurate)
+==================== 2026-10-01T09:10:23.407475Z | a42715e3-4e70-4297-a385-15be47d29080 ====================
+09:10:23.413559 [info ]: Started loading project
+09:10:23.427620 [info ]: Loading profiles.yml
+09:10:23.468766 [info ]: Finished loading project [  0.06s]
+==================== 2026-10-01T09:10:23.469738Z | 81698dbf-e553-4e5f-b139-d268cfdbbcee ====================
+09:10:23.470115 [info ]: Started loading project
+09:10:23.470280 [info ]: Loading profiles.yml
+09:10:23.620607 [debug]:    Started loading packages
+09:10:23.621098 [debug]:     Loaded [  0.00s] packages
+09:10:23.621506 [info ]: Finished loading project [  0.15s]
+09:10:23.623842 [info ]: Started parsing
+09:10:23.664742 [debug]: Finished parsing models/staging/_sources.yml [  0.00s]
+09:10:23.672263 [debug]: Finished parsing models/marts/mart_store_revenue.sql [  0.00s]
+09:10:23.673337 [debug]: Finished parsing models/staging/stg_pos_test.sql [  0.00s]
+09:10:23.773481 [info ]: Finished parsing [  0.15s]
+09:10:23.775712 [info ]: Cached model count updated: 2 models (estimate)
+09:10:23.775752 [info ]: Cached model count updated: 2 models (accurate)
+09:10:23.776910 [info ]: Started scheduling
+09:10:23.778322 [info ]: Finished scheduling [  0.00s]
+09:10:23.778500 [debug]: Compilation - 0 nodes selected: {}
+09:10:23.778972 [warn ]: [NoNodesForSelectionCriteria (dbt1092)]: The selection criterion '' does not match any enabled nodes
+09:10:23.779243 [warn ]: [NoNodesSelected (dbt1601)]: Nothing to do. Try checking your model configs and model specification args
+09:10:23.779432 [info ]: Started scheduling
+09:10:23.779920 [info ]: Finished scheduling [  0.00s]
+09:10:23.781947 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "", schema: "raw_dev", table: "pos_test" }) and interval: None
+09:10:23.789887 [info ]: Started building task graph
+09:10:23.790284 [info ]: Finished building task graph [  0.00s]
+09:10:23.813089 [info ]: Started scheduling
+09:10:23.813120 [info ]: Finished scheduling [  0.00s]
+09:10:23.813656 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 2 warnings for target 'dev' [343ms]
+09:10:23.813853 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [406ms]
+09:10:23.818524 [info ]: Cached model count updated: 2 models (accurate)
+==================== 2026-10-01T09:10:24.976635Z | 59d30828-3746-419a-8a02-dce9ed16fd62 ====================
+09:10:24.976686 [info ]: Started loading project
+09:10:24.977256 [info ]: Loading profiles.yml
+09:10:24.980374 [info ]: Finished loading project [  0.00s]
+09:10:24.998674 [info ]: Cached model count updated: 2 models (estimate)
+09:10:24.998699 [info ]: Cached model count updated: 2 models (accurate)
+09:10:24.998717 [info ]: Started scheduling
+09:10:24.998760 [info ]: Finished scheduling [  0.00s]
+09:10:24.998772 [debug]: Compilation - 2 nodes selected: {"model.turyan_retail.mart_store_revenue", "model.turyan_retail.stg_pos_test"}
+09:10:25.000119 [info ]: Started building task graph
+09:10:25.001447 [info ]: Finished building task graph [  0.00s]
+09:10:25.003821 [info ]: Started rendering (2 nodes)
+09:10:25.003858 [info ]: Started model analytics_dev.mart_store_revenue
+09:10:25.003868 [debug]: Started rendering model analytics_dev.mart_store_revenue
+09:10:25.004076 [info ]: Started model analytics_dev.stg_pos_test
+09:10:25.004083 [debug]: Started rendering model analytics_dev.stg_pos_test
+09:10:25.007668 [debug]: Compiled SQL for node model.turyan_retail.mart_store_revenue at target/.lsp/compiled/turyan_retail/models/marts/mart_store_revenue.sql
+09:10:25.007918 [debug]: Finished rendering [  0.00s] model analytics_dev.mart_store_revenue [success]
+09:10:25.007935 [info ]:  Succeeded model analytics_dev.mart_store_revenue (table) [1 of 2 in 0.00s]
+09:10:25.008491 [debug]: Compiled SQL for node model.turyan_retail.stg_pos_test at target/.lsp/compiled/turyan_retail/models/staging/stg_pos_test.sql
+09:10:25.008646 [debug]: Finished rendering [  0.00s] model analytics_dev.stg_pos_test [success]
+09:10:25.008680 [info ]: Finished rendering [  0.00s] (2 nodes, 0 skipped, 0 errors)
+09:10:25.008695 [info ]:  Succeeded model analytics_dev.stg_pos_test (view) [2 of 2 in 0.00s]
+09:10:25.013854 [info ]: Started scheduling
+09:10:25.014268 [info ]: Finished scheduling [  0.00s]
+09:10:25.014339 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [37ms]
+Processed: 2 models
+Summary: 2 total | 2 success
+09:10:25.014547 [info ]: Cached model count updated: 2 models (accurate)
+09:10:25.354906 [info ]: Loading profiles.yml
+==================== 2026-10-01T09:10:38.628165Z | aab1a1a7-d8e9-4db7-a448-e91ba1a1ad52 ====================
+09:10:38.628340 [info ]: Started loading project
+09:10:38.629198 [info ]: Loading profiles.yml
+09:10:38.633110 [info ]: Finished loading project [  0.00s]
+==================== 2026-10-01T09:10:38.634383Z | 2b3d8685-7cb6-42c0-9697-3fdf644ea2aa ====================
+09:10:38.634414 [info ]: Started loading project
+09:10:38.634583 [info ]: Loading profiles.yml
+09:10:38.765848 [debug]:    Started loading packages
+09:10:38.766242 [debug]:     Loaded [  0.00s] packages
+09:10:38.766631 [info ]: Finished loading project [  0.13s]
+09:10:38.766747 [info ]: Started parsing
+09:10:38.787311 [debug]: Finished parsing models/staging/_sources.yml [  0.00s]
+09:10:38.787870 [debug]: Finished parsing models/marts/mart_store_revenue.sql [  0.00s]
+09:10:38.788217 [debug]: Finished parsing models/staging/stg_pos_test.sql [  0.00s]
+09:10:38.884184 [info ]: Finished parsing [  0.12s]
+09:10:38.884578 [info ]: Cached model count updated: 2 models (estimate)
+09:10:38.884589 [info ]: Cached model count updated: 2 models (accurate)
+09:10:38.884613 [info ]: Started scheduling
+09:10:38.884648 [info ]: Finished scheduling [  0.00s]
+09:10:38.884655 [debug]: Compilation - 0 nodes selected: {}
+09:10:38.884671 [warn ]: [NoNodesForSelectionCriteria (dbt1092)]: The selection criterion '' does not match any enabled nodes
+09:10:38.884683 [warn ]: [NoNodesSelected (dbt1601)]: Nothing to do. Try checking your model configs and model specification args
+09:10:38.884702 [info ]: Started scheduling
+09:10:38.884732 [info ]: Finished scheduling [  0.00s]
+09:10:38.884777 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "", schema: "raw_dev", table: "pos_test" }) and interval: None
+09:10:38.885385 [info ]: Started building task graph
+09:10:38.885400 [info ]: Finished building task graph [  0.00s]
+09:10:38.888640 [info ]: Started scheduling
+09:10:38.888650 [info ]: Finished scheduling [  0.00s]
+09:10:38.888702 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 2 warnings for target 'dev' [254ms]
+09:10:38.888735 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [260ms]
+09:10:38.889781 [info ]: Cached model count updated: 2 models (accurate)
+==================== 2026-10-01T09:10:40.063672Z | f133cfbc-d1a8-4cd4-a440-5c738941003c ====================
+09:10:40.063785 [info ]: Started loading project
+09:10:40.064619 [info ]: Loading profiles.yml
+09:10:40.071023 [info ]: Finished loading project [  0.01s]
+09:10:40.095824 [info ]: Cached model count updated: 2 models (estimate)
+09:10:40.095845 [info ]: Cached model count updated: 2 models (accurate)
+09:10:40.095864 [info ]: Started scheduling
+09:10:40.095909 [info ]: Finished scheduling [  0.00s]
+09:10:40.095921 [debug]: Compilation - 2 nodes selected: {"model.turyan_retail.mart_store_revenue", "model.turyan_retail.stg_pos_test"}
+09:10:40.096705 [info ]: Started building task graph
+09:10:40.096753 [info ]: Finished building task graph [  0.00s]
+09:10:40.097589 [info ]: Started rendering (2 nodes)
+09:10:40.097605 [info ]: Started model analytics_dev.mart_store_revenue
+09:10:40.097616 [debug]: Started rendering model analytics_dev.mart_store_revenue
+09:10:40.097642 [info ]: Started model analytics_dev.stg_pos_test
+09:10:40.097650 [debug]: Started rendering model analytics_dev.stg_pos_test
+09:10:40.098326 [debug]: Compiled SQL for node model.turyan_retail.stg_pos_test at target/.lsp/compiled/turyan_retail/models/staging/stg_pos_test.sql
+09:10:40.098466 [debug]: Finished rendering [  0.00s] model analytics_dev.stg_pos_test [success]
+09:10:40.098480 [info ]:  Succeeded model analytics_dev.stg_pos_test (view) [2 of 2 in 0.00s]
+09:10:40.098855 [debug]: Compiled SQL for node model.turyan_retail.mart_store_revenue at target/.lsp/compiled/turyan_retail/models/marts/mart_store_revenue.sql
+09:10:40.098932 [debug]: Finished rendering [  0.00s] model analytics_dev.mart_store_revenue [success]
+09:10:40.098946 [info ]: Finished rendering [  0.00s] (2 nodes, 0 skipped, 0 errors)
+09:10:40.098953 [info ]:  Succeeded model analytics_dev.mart_store_revenue (table) [1 of 2 in 0.00s]
+09:10:40.102908 [info ]: Started scheduling
+09:10:40.102931 [info ]: Finished scheduling [  0.00s]
+09:10:40.102963 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [39ms]
+Processed: 2 models
+Summary: 2 total | 2 success
+09:10:40.103021 [info ]: Cached model count updated: 2 models (accurate)
+09:10:40.442739 [info ]: Loading profiles.yml

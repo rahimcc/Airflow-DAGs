@@ -13,8 +13,8 @@ turyan_retail:
     prod:
       type: clickhouse
       schema: analytics
-      host: localhost
-      port: 18123
-      user: admin
-      password: "xT2vBGuvLMy8MJKzu2PD"
+      host: "{{ env_var('CH_HOST', 'clickhouse') }}"
+      port: "{{ env_var('CH_PORT', '8123') | int }}"
+      user: "{{ env_var('CH_USER', 'default') }}"
+      password: "{{ env_var('CH_PASSWORD', '') }}"
       secure: false
