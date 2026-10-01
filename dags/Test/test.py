@@ -150,7 +150,10 @@ with DAG("smoke_test_pos", start_date=datetime(2026, 9, 1, tzinfo=BAKU_TZ),
 
     t_dbt_build = BashOperator(
                         task_id = "dbt_build",
-                        bash_command = f'cd {DBT_PROJECT_DIR} && /opt/dbt_venv/bin/dbt-ol  build --target {{{{ var.value.pos_env }}}} --log-path /tmp/dbt_logs --target-path /tmp/dbt_target',
+                        bash_command = ( 
+                                f'export PATH=/opt/dbt_venv/bin:$PATH &&'
+                                f'cd {DBT_PROJECT_DIR} &&'
+                                f'/opt/dbt_venv/bin/dbt-ol  build --target {{{{ var.value.pos_env }}}} --log-path /tmp/dbt_logs --target-path /tmp/dbt_target'),
                         env={
                             "CH_HOST": "{{ var.value.ch_host }}",
                             "CH_PORT": "{{ var.value.ch_port }}",
