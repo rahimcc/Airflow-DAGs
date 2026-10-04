@@ -1020,3 +1020,192 @@ ORDER BY total_revenue
 [0m11:26:01.405325 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b8f38f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d880b30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cf14bc0>]}
 [0m11:26:01.405544 [debug] [MainThread]: Flushing usage events
 [0m11:26:02.282727 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:09:35.110493 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114cad640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115a5ef30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115a5ec00>]}
+
+
+============================== 15:09:35.113252 | 3d3b29db-d9e9-4cdc-9ddf-8e2ce115d6a1 ==============================
+[0m15:09:35.113252 [info ] [MainThread]: Running with dbt=1.12.5
+[0m15:09:35.113526 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'target_path': 'None', 'empty': 'None', 'debug': 'False', 'maximum_seed_size_mib': '1', 'no_print': 'None', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'profiles_dir': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail', 'log_path': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/logs', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'log_format': 'default', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'warn_error': 'None', 'quiet': 'False', 'static_parser': 'True', 'write_json': 'True', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt docs generate', 'version_check': 'True'}
+[0m15:09:35.211574 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3d3b29db-d9e9-4cdc-9ddf-8e2ce115d6a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114c79d90>]}
+[0m15:09:35.235505 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3d3b29db-d9e9-4cdc-9ddf-8e2ce115d6a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115af9c10>]}
+[0m15:09:35.236184 [info ] [MainThread]: Registered adapter: clickhouse=1.10.3
+[0m15:09:35.290597 [debug] [MainThread]: checksum: 3d229225290b4b8400ba0c7e468eb51813ce72b62e5c74c6a053ba5d9bb786ce, vars: {}, profile: turyan_retail, target: dev, version: 1.12.5
+[0m15:09:35.331242 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m15:09:35.331488 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '3d3b29db-d9e9-4cdc-9ddf-8e2ce115d6a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11621d7c0>]}
+[0m15:09:35.877515 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3d3b29db-d9e9-4cdc-9ddf-8e2ce115d6a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1165f93d0>]}
+[0m15:09:35.889335 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3d3b29db-d9e9-4cdc-9ddf-8e2ce115d6a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1165e97f0>]}
+[0m15:09:35.889565 [info ] [MainThread]: Found 2 models, 3 sources, 547 macros
+[0m15:09:35.889711 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3d3b29db-d9e9-4cdc-9ddf-8e2ce115d6a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x116188440>]}
+[0m15:09:35.890467 [info ] [MainThread]: 
+[0m15:09:35.890622 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:09:35.890733 [info ] [MainThread]: 
+[0m15:09:35.890942 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m15:09:35.893472 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list__analytics_dev'
+[0m15:09:35.898329 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:09:37.752244 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__analytics_dev: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "turyan_retail", "target_name": "dev", "connection_name": "list__analytics_dev"} */
+with mv_sources as (
+      -- Find all MVs and their target tables (database and name of the MV, plus the SELECT SQL)
+      select
+        name as mv_name,
+        database as mv_database,
+        any(as_select) as mv_sql,any(replaceRegexpOne(create_table_query, '.*TO\\s+`\x3F([^`\\s(]+)`\x3F\\.`\x3F([^`\\s(]+)`\x3F.*', '\\1.\\2')) as target_fqn
+      
+      from system.tables
+      
+      where engine = 'MaterializedView'
+        and create_table_query like '%TO %'
+      group by mv_name, mv_database
+    )
+    select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        t.engine = 'MaterializedView', 'materialized_view',
+        t.engine = 'View', 'view',
+        t.engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,
+      groupArrayIf(
+        map('schema', mv_sources.mv_database, 'name', mv_sources.mv_name, 'sql', mv_sources.mv_sql),
+        mv_sources.mv_name != ''
+      ) as mvs_pointing_to_it,
+      -- The refresh clause of a refreshable MV sits between the view name and the TO clause,
+      -- e.g. CREATE MATERIALIZED VIEW db.mv REFRESH EVERY 2 MINUTE [APPEND] TO db.target ...
+      max(position(substring(t.create_table_query, 1, position(t.create_table_query, ' TO ')), ' REFRESH ')) > 0 as is_refreshable,
+      max(position(substring(t.create_table_query, 1, position(t.create_table_query, ' TO ')), ' APPEND')) > 0 as refreshable_append,0 as is_on_cluster
+        from system.tables as t
+      
+        join system.databases as db on t.database = db.name
+        left join mv_sources on mv_sources.target_fqn = concat(t.database, '.', t.name)
+      where schema = 'analytics_dev'
+      group by name, schema, type, db_engine
+
+  ...
+[0m15:09:37.890053 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.14 seconds
+[0m15:09:37.938482 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3d3b29db-d9e9-4cdc-9ddf-8e2ce115d6a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1165e97f0>]}
+[0m15:09:37.940160 [debug] [Thread-1 (]: Began running node model.turyan_retail.stg_pos_test
+[0m15:09:37.940465 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list__analytics_dev, now model.turyan_retail.stg_pos_test)
+[0m15:09:37.940688 [debug] [Thread-1 (]: Began compiling node model.turyan_retail.stg_pos_test
+[0m15:09:37.944784 [debug] [Thread-1 (]: Writing injected SQL for node "model.turyan_retail.stg_pos_test"
+[0m15:09:37.945180 [debug] [Thread-1 (]: Began executing node model.turyan_retail.stg_pos_test
+[0m15:09:37.945530 [debug] [Thread-1 (]: Finished running node model.turyan_retail.stg_pos_test
+[0m15:09:37.945882 [debug] [Thread-1 (]: Began running node model.turyan_retail.mart_store_revenue
+[0m15:09:37.946161 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.turyan_retail.stg_pos_test, now model.turyan_retail.mart_store_revenue)
+[0m15:09:37.946365 [debug] [Thread-1 (]: Began compiling node model.turyan_retail.mart_store_revenue
+[0m15:09:37.947293 [debug] [Thread-1 (]: Writing injected SQL for node "model.turyan_retail.mart_store_revenue"
+[0m15:09:37.947795 [debug] [Thread-1 (]: Began executing node model.turyan_retail.mart_store_revenue
+[0m15:09:37.948091 [debug] [Thread-1 (]: Finished running node model.turyan_retail.mart_store_revenue
+[0m15:09:37.948475 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:09:37.948616 [debug] [MainThread]: Connection 'model.turyan_retail.mart_store_revenue' was left open.
+[0m15:09:37.948754 [debug] [MainThread]: On model.turyan_retail.mart_store_revenue: Close
+[0m15:09:37.949146 [debug] [MainThread]: Command end result
+[0m15:09:37.988765 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/manifest.json
+[0m15:09:37.990325 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/semantic_manifest.json
+[0m15:09:38.001097 [debug] [MainThread]: Wrote artifact OsiDocument to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/osi_document.json
+[0m15:09:38.004365 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/run_results.json
+[0m15:09:38.006207 [debug] [MainThread]: Acquiring new clickhouse connection 'generate_catalog'
+[0m15:09:38.006318 [info ] [MainThread]: Building catalog
+[0m15:09:38.009696 [debug] [ThreadPool]: Acquiring new clickhouse connection '.information_schema'
+[0m15:09:38.013419 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:09:38.622754 [debug] [ThreadPool]: dbt_clickhouse adapter: On .information_schema: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "turyan_retail", "target_name": "dev", "connection_name": ".information_schema"} */
+select
+      '' as table_database,
+      columns.database as table_schema,
+      columns.table as table_name,
+      if(tables.engine not in ('MaterializedView', 'View'), 'table', 'view') as table_type,
+      nullIf(tables.comment, '') as table_comment,
+      columns.name as column_name,
+      columns.position as column_index,
+      columns.type as column_type,
+      nullIf(columns.comment, '') as column_comment,
+      cast(null as Nullable(String)) as table_owner
+    from system.columns as columns
+    join system.tables as tables on tables.database = columns.database and tables.name = columns.table
+    
+    where columns.database != 'system'
+      and (
+
+        (
+          columns.database = 'raw'
+          and columns.table = 'pos_test'
+        ) or 
+
+        (
+          columns.database = 'raw_dev'
+          and columns.table = 'pos_transactions'
+        ) or 
+
+        (
+          columns.database = 'raw_dev'
+          and columns.table = 'pos_test'
+        ) or 
+
+        (
+          columns.database = 'analytics_dev'
+          and columns.table = 'stg_pos_test'
+        ) or 
+
+        (
+          columns.database = 'analytics_dev'
+          and columns.table = 'mart_store_revenue'
+        ))
+  
+    order by columns.database, columns.table, columns.position...
+[0m15:09:38.753090 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.13 seconds
+[0m15:09:38.768129 [debug] [MainThread]: Wrote artifact CatalogArtifact to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/catalog.json
+[0m15:09:38.836007 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/manifest.json
+[0m15:09:38.837743 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/semantic_manifest.json
+[0m15:09:38.838898 [debug] [MainThread]: Wrote artifact OsiDocument to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/osi_document.json
+[0m15:09:38.839043 [info ] [MainThread]: Catalog written to /Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/target/catalog.json
+[0m15:09:38.841447 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 3.7801464, "process_in_blocks": "0", "process_kernel_time": 0.22155, "process_mem_max_rss": "139051008", "process_out_blocks": "0", "process_user_time": 1.584291}
+[0m15:09:38.841777 [debug] [MainThread]: Command `dbt docs generate` succeeded at 15:09:38.841737 after 3.78 seconds
+[0m15:09:38.841931 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m15:09:38.842040 [debug] [MainThread]: Connection '.information_schema' was left open.
+[0m15:09:38.842155 [debug] [MainThread]: On .information_schema: Close
+[0m15:09:38.842349 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102e56ba0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1167eee10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x116785cd0>]}
+[0m15:09:38.842508 [debug] [MainThread]: Flushing usage events
+[0m15:09:40.888526 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:10:23.255133 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e241d00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f805760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f8053a0>]}
+
+
+============================== 15:10:23.258296 | a05d594a-1aab-474b-9fd5-5e92137ab0e0 ==============================
+[0m15:10:23.258296 [info ] [MainThread]: Running with dbt=1.12.5
+[0m15:10:23.258600 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'use_experimental_parser': 'False', 'use_colors': 'True', 'empty': 'None', 'log_cache_events': 'False', 'static_parser': 'True', 'maximum_seed_size_mib': '1', 'cache_selected_only': 'False', 'log_format': 'default', 'introspect': 'True', 'hints_enabled': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'invocation_command': 'dbt docs serve --port 8085', 'no_print': 'None', 'target_path': 'None', 'profiles_dir': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail', 'debug': 'False', 'indirect_selection': 'eager', 'version_check': 'True', 'fail_fast': 'False', 'warn_error': 'None', 'printer_width': '80', 'partial_parse': 'True', 'log_path': '/Users/rahimsharifov/Documents/Document/Airflow-DAGs/dbt/turyan_retail/logs'}
+[0m15:10:23.359101 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a05d594a-1aab-474b-9fd5-5e92137ab0e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f9a88c0>]}
+[0m15:10:23.383550 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a05d594a-1aab-474b-9fd5-5e92137ab0e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b082510>]}
+[0m14:23:08.584185 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+
+[0m14:23:08.640038 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 198, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 144, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 295, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 340, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 387, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/cli/main.py", line 323, in docs_serve
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/rahimsharifov/Documents/Document/Airflow-DAGs/venv/lib/python3.12/site-packages/dbt/task/docs/serve.py", line 29, in run
+    httpd.serve_forever()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+[0m14:23:08.667107 [debug] [MainThread]: Resource report: {"command_name": "serve", "command_success": false, "command_wall_clock_time": 46689.39, "process_in_blocks": "0", "process_kernel_time": 3.840362, "process_mem_max_rss": "124862464", "process_out_blocks": "0", "process_user_time": 4.234485}
+[0m14:23:08.674648 [debug] [MainThread]: Command `dbt docs serve` failed at 14:23:08.672073 after 46689.40 seconds
+[0m14:23:08.681177 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ee4e8a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f805760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f807aa0>]}
+[0m14:23:08.685497 [debug] [MainThread]: Flushing usage events

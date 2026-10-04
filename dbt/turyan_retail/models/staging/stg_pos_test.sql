@@ -1,4 +1,14 @@
 -- models/staging/stg_pos_test.sql
+{{ config(
+    meta={
+        'openlineage': {
+            'namespace': 'turyan_clickhouse',
+            'name': 'stg_pos_test'
+        }
+    }
+) }}
+
+
 {% if target.name == 'prod' %}
     {% set source_ref = source('raw', 'pos_test') %}
 {% else %}
