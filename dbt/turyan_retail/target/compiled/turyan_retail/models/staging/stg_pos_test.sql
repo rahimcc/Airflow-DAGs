@@ -1,4 +1,9 @@
 -- models/staging/stg_pos_test.sql
+
+    
+
+
+
 select
     transaction_id,
     store_code,

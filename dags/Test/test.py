@@ -37,29 +37,28 @@ def s3_prefix():
 
 
 def get_pg_config():
-    return { 'host': Variable.get('pg_host'),
-         'port':Variable.get('pg_port'),
-         'dbname':Variable.get('pg_database'),
-         'user': Variable.get('pg_user'),
-         'password': Variable.get('pg_postgres_password')
+    return { 'host': Variable.get('postgres', deserialize_json=True)['pg_host'],
+         'port':Variable.get('postgres', deserialize_json=True)['pg_port'],
+         'dbname':Variable.get('postgres', deserialize_json= True)['pg_database'],
+         'user': Variable.get('postgres', deserialize_json=True)['pg_user'],
+         'password': Variable.get('postgres', deserialize_json=True)['pg_postgres_password']
          }
 
 def get_ch_config():
     return { 
-        'host': Variable.get('ch_host'),
-          'port': Variable.get('ch_port'),
-          'user': Variable.get('ch_user'),
-          'password': Variable.get('ch_password')
+        'host': Variable.get('clickhouse',deserialize_json=True)['ch_host'],
+        'port': Variable.get('clickhouse',deserialize_json=True )['ch_port'],
+        'user': Variable.get('clickhouse',deserialize_json=True)['ch_user'],
+        'password': Variable.get('clickhouse', deserialize_json=True)['ch_password']
      } 
-
 
 def get_sw_config():
    return {
-         's3_client_endpoint': Variable.get('s3_client_endpoint'),
-          's3_server_endpoint': Variable.get('s3_server_endpoint'),
-          's3_bucket': Variable.get('s3_bucket'),
-          's3_key' :  Variable.get('s3_key'),
-          's3_secret': Variable.get('s3_secret')   
+          's3_client_endpoint': Variable.get('s3', deserialize_json=True)['s3_client_endpoint'],
+          's3_server_endpoint': Variable.get('s3', deserialize_json=True)['s3_server_endpoint'],
+          's3_bucket': Variable.get('s3', deserialize_json=True)['s3_bucket'],
+          's3_key' :  Variable.get('s3', deserialize_json=True)['s3_key'],
+          's3_secret': Variable.get('s3', deserialize_json=True)['s3_secret']   
         }
 
 # the laptop uploads through one address; ClickHouse itself reads through anothe
@@ -155,12 +154,12 @@ with DAG("smoke_test_pos", start_date=datetime(2026, 9, 1, tzinfo=BAKU_TZ),
                                 f'cd {DBT_PROJECT_DIR} &&'
                                 f'/opt/dbt_venv/bin/dbt-ol  build --target {{{{ var.value.pos_env }}}} --log-path /tmp/dbt_logs --target-path /tmp/dbt_target'),
                         env={
-                            "CH_HOST": "{{ var.value.ch_host }}",
-                            "CH_PORT": "{{ var.value.ch_port }}",
-                            "CH_USER": "{{ var.value.ch_user }}",
-                            "CH_PASSWORD": "{{ var.value.ch_password }}",
+                            "CH_HOST": "{{ var.json.clickhouse.ch_host }}",
+                            "CH_PORT": "{{ var.json.clickhouse.ch_port }}",
+                            "CH_USER": "{{ var.json.clickhouse.ch_user }}",
+                            "CH_PASSWORD": "{{ var.json.clickhouse.ch_password }}",
                             "OPENLINEAGE_URL": "{{ var.value.marquez_url }}",
-                            "OPENLINEAGE_NAMESPACE": "turyan",
+                            "OPENLINEAGE_NAMESPACE": "turyan_clickhouse",
                         },
                         append_env = True
                 )

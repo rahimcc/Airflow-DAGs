@@ -1471,3 +1471,194 @@ Finished 'compile' successfully for target 'dev' [31ms]
 Processed: 2 models
 Summary: 2 total | 2 success
 09:27:47.770192 [info ]: Cached model count updated: 2 models (accurate)
+11:09:13.186198 [debug]: Ignoring unsupported LSP notification
+11:09:16.133793 [debug]: Ignoring unsupported LSP notification
+11:09:34.272444 [debug]: Ignoring unsupported LSP notification
+11:09:41.249251 [debug]: Ignoring unsupported LSP notification
+11:10:16.662987 [debug]: Ignoring unsupported LSP notification
+11:10:17.833781 [debug]: Ignoring unsupported LSP notification
+11:10:22.488259 [debug]: Ignoring unsupported LSP notification
+==================== 2026-10-01T11:20:38.575853Z | 600eaa29-c2e2-4ec8-ad16-495e7f66585a ====================
+11:20:38.580076 [info ]: Started loading project
+11:20:38.596848 [info ]: Loading profiles.yml
+11:20:38.645709 [info ]: Started parsing
+11:20:38.698430 [info ]: Finished loading project [  0.12s]
+11:20:38.714443 [debug]: Finished parsing models/staging/stg_pos_test.sql [  0.01s]
+11:20:38.804728 [debug]: Ignoring unsupported LSP notification
+11:20:38.836795 [info ]: Finished parsing [  0.19s]
+11:20:38.841471 [info ]: Cached model count updated: 2 models (estimate)
+11:20:38.841487 [info ]: Cached model count updated: 2 models (accurate)
+11:20:38.842906 [info ]: Started scheduling
+11:20:38.844859 [info ]: Finished scheduling [  0.00s]
+11:20:38.845003 [debug]: Compilation - 1 nodes selected: {"model.turyan_retail.stg_pos_test"}
+11:20:38.856911 [info ]: Started building task graph
+11:20:38.859100 [info ]: Finished building task graph [  0.00s]
+11:20:38.880441 [info ]: Started rendering (1 nodes)
+11:20:38.880494 [info ]: Started model analytics_dev.stg_pos_test
+11:20:38.880656 [debug]: Started rendering model analytics_dev.stg_pos_test
+11:20:38.885722 [debug]: Compiled SQL for node model.turyan_retail.stg_pos_test at target/.lsp/compiled/turyan_retail/models/staging/stg_pos_test.sql
+11:20:38.886290 [debug]: Finished rendering [  0.01s] model analytics_dev.stg_pos_test [success]
+11:20:38.886309 [info ]: Finished rendering [  0.01s] (1 nodes, 0 skipped, 0 errors)
+11:20:38.886316 [info ]:  Succeeded model analytics_dev.stg_pos_test (view) [1 of 1 in 0.01s]
+11:20:38.898399 [info ]: Started scheduling
+11:20:38.898456 [info ]: Finished scheduling [  0.00s]
+11:20:38.899767 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [323ms]
+Processed: 1 model
+Summary: 1 total | 1 success
+11:20:38.900125 [info ]: Cached model count updated: 2 models (accurate)
+==================== 2026-10-01T11:20:40.075975Z | 55aef372-ca08-49d0-8b4b-f5e914574828 ====================
+11:20:40.076041 [info ]: Started loading project
+11:20:40.076359 [info ]: Loading profiles.yml
+11:20:40.081542 [info ]: Finished loading project [  0.01s]
+11:20:40.099258 [info ]: Cached model count updated: 2 models (estimate)
+11:20:40.099290 [info ]: Cached model count updated: 2 models (accurate)
+11:20:40.099321 [info ]: Started scheduling
+11:20:40.099381 [info ]: Finished scheduling [  0.00s]
+11:20:40.099394 [debug]: Compilation - 2 nodes selected: {"model.turyan_retail.mart_store_revenue", "model.turyan_retail.stg_pos_test"}
+11:20:40.100126 [info ]: Started building task graph
+11:20:40.100164 [info ]: Finished building task graph [  0.00s]
+11:20:40.101040 [info ]: Started rendering (2 nodes)
+11:20:40.101058 [info ]: Started model analytics_dev.mart_store_revenue
+11:20:40.101069 [debug]: Started rendering model analytics_dev.mart_store_revenue
+11:20:40.101097 [info ]: Started model analytics_dev.stg_pos_test
+11:20:40.101103 [debug]: Started rendering model analytics_dev.stg_pos_test
+11:20:40.102086 [debug]: Compiled SQL for node model.turyan_retail.mart_store_revenue at target/.lsp/compiled/turyan_retail/models/marts/mart_store_revenue.sql
+11:20:40.102162 [debug]: Finished rendering [  0.00s] model analytics_dev.mart_store_revenue [success]
+11:20:40.102207 [debug]: Compiled SQL for node model.turyan_retail.stg_pos_test at target/.lsp/compiled/turyan_retail/models/staging/stg_pos_test.sql
+11:20:40.102217 [info ]:  Succeeded model analytics_dev.mart_store_revenue (table) [1 of 2 in 0.00s]
+11:20:40.102291 [debug]: Finished rendering [  0.00s] model analytics_dev.stg_pos_test [success]
+11:20:40.102297 [info ]: Finished rendering [  0.00s] (2 nodes, 0 skipped, 0 errors)
+11:20:40.102302 [info ]:  Succeeded model analytics_dev.stg_pos_test (view) [2 of 2 in 0.00s]
+11:20:40.106160 [info ]: Started scheduling
+11:20:40.106202 [info ]: Finished scheduling [  0.00s]
+11:20:40.106250 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [30ms]
+Processed: 2 models
+Summary: 2 total | 2 success
+11:20:40.106338 [info ]: Cached model count updated: 2 models (accurate)
+==================== 2026-10-01T11:20:43.515541Z | 2d432752-76ba-42cd-b225-d94c49d3d119 ====================
+11:20:43.515588 [info ]: Started loading project
+11:20:43.515816 [info ]: Loading profiles.yml
+11:20:43.519653 [info ]: Started parsing
+11:20:43.561170 [info ]: Finished loading project [  0.05s]
+11:20:43.561931 [debug]: Finished parsing models/staging/stg_pos_test.sql [  0.00s]
+11:20:43.654425 [info ]: Finished parsing [  0.13s]
+11:20:43.655410 [info ]: Cached model count updated: 2 models (estimate)
+11:20:43.655420 [info ]: Cached model count updated: 2 models (accurate)
+11:20:43.655437 [info ]: Started scheduling
+11:20:43.655475 [info ]: Finished scheduling [  0.00s]
+11:20:43.655483 [debug]: Compilation - 1 nodes selected: {"model.turyan_retail.stg_pos_test"}
+11:20:43.655950 [info ]: Started building task graph
+11:20:43.655971 [info ]: Finished building task graph [  0.00s]
+11:20:43.656537 [info ]: Started rendering (1 nodes)
+11:20:43.656546 [info ]: Started model analytics_dev.stg_pos_test
+11:20:43.656554 [debug]: Started rendering model analytics_dev.stg_pos_test
+11:20:43.657101 [debug]: Compiled SQL for node model.turyan_retail.stg_pos_test at target/.lsp/compiled/turyan_retail/models/staging/stg_pos_test.sql
+11:20:43.657182 [debug]: Finished rendering [  0.00s] model analytics_dev.stg_pos_test [success]
+11:20:43.657193 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+11:20:43.657198 [info ]:  Succeeded model analytics_dev.stg_pos_test (view) [1 of 1 in 0.00s]
+11:20:43.660311 [info ]: Started scheduling
+11:20:43.660346 [info ]: Finished scheduling [  0.00s]
+11:20:43.660725 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [145ms]
+Processed: 1 model
+Summary: 1 total | 1 success
+11:20:43.660769 [info ]: Cached model count updated: 2 models (accurate)
+==================== 2026-10-01T11:20:44.843051Z | 9fe4f38b-f572-4393-a40d-cb7bf2d66e7a ====================
+11:20:44.843130 [info ]: Started loading project
+11:20:44.843779 [info ]: Loading profiles.yml
+11:20:44.849965 [info ]: Finished loading project [  0.01s]
+11:20:44.874120 [info ]: Cached model count updated: 2 models (estimate)
+11:20:44.874140 [info ]: Cached model count updated: 2 models (accurate)
+11:20:44.874162 [info ]: Started scheduling
+11:20:44.874218 [info ]: Finished scheduling [  0.00s]
+11:20:44.874232 [debug]: Compilation - 2 nodes selected: {"model.turyan_retail.mart_store_revenue", "model.turyan_retail.stg_pos_test"}
+11:20:44.875024 [info ]: Started building task graph
+11:20:44.875056 [info ]: Finished building task graph [  0.00s]
+11:20:44.875874 [info ]: Started rendering (2 nodes)
+11:20:44.875886 [info ]: Started model analytics_dev.mart_store_revenue
+11:20:44.875896 [debug]: Started rendering model analytics_dev.mart_store_revenue
+11:20:44.875916 [info ]: Started model analytics_dev.stg_pos_test
+11:20:44.875924 [debug]: Started rendering model analytics_dev.stg_pos_test
+11:20:44.876107 [debug]: Compiled SQL for node model.turyan_retail.stg_pos_test at target/.lsp/compiled/turyan_retail/models/staging/stg_pos_test.sql
+11:20:44.876165 [debug]: Finished rendering [  0.00s] model analytics_dev.stg_pos_test [success]
+11:20:44.876180 [info ]:  Succeeded model analytics_dev.stg_pos_test (view) [2 of 2 in 0.00s]
+11:20:44.876221 [debug]: Compiled SQL for node model.turyan_retail.mart_store_revenue at target/.lsp/compiled/turyan_retail/models/marts/mart_store_revenue.sql
+11:20:44.876264 [debug]: Finished rendering [  0.00s] model analytics_dev.mart_store_revenue [success]
+11:20:44.876277 [info ]: Finished rendering [  0.00s] (2 nodes, 0 skipped, 0 errors)
+11:20:44.876284 [info ]:  Succeeded model analytics_dev.mart_store_revenue (table) [1 of 2 in 0.00s]
+11:20:44.879974 [info ]: Started scheduling
+11:20:44.879998 [info ]: Finished scheduling [  0.00s]
+11:20:44.880032 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [36ms]
+Processed: 2 models
+Summary: 2 total | 2 success
+11:20:44.880102 [info ]: Cached model count updated: 2 models (accurate)
+==================== 2026-10-01T11:20:46.738362Z | e3cf0b4e-5a8b-4017-85b9-e92a63c41219 ====================
+11:20:46.738906 [info ]: Started loading project
+11:20:46.739351 [info ]: Loading profiles.yml
+11:20:46.746216 [info ]: Started parsing
+11:20:46.795610 [info ]: Finished loading project [  0.06s]
+11:20:46.796743 [debug]: Finished parsing models/staging/stg_pos_test.sql [  0.00s]
+11:20:46.885281 [info ]: Finished parsing [  0.14s]
+11:20:46.886515 [info ]: Cached model count updated: 2 models (estimate)
+11:20:46.886525 [info ]: Cached model count updated: 2 models (accurate)
+11:20:46.886540 [info ]: Started scheduling
+11:20:46.886579 [info ]: Finished scheduling [  0.00s]
+11:20:46.886588 [debug]: Compilation - 1 nodes selected: {"model.turyan_retail.stg_pos_test"}
+11:20:46.887203 [info ]: Started building task graph
+11:20:46.887224 [info ]: Finished building task graph [  0.00s]
+11:20:46.887738 [info ]: Started rendering (1 nodes)
+11:20:46.887747 [info ]: Started model analytics_dev.stg_pos_test
+11:20:46.887755 [debug]: Started rendering model analytics_dev.stg_pos_test
+11:20:46.888331 [debug]: Compiled SQL for node model.turyan_retail.stg_pos_test at target/.lsp/compiled/turyan_retail/models/staging/stg_pos_test.sql
+11:20:46.888405 [debug]: Finished rendering [  0.00s] model analytics_dev.stg_pos_test [success]
+11:20:46.888413 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+11:20:46.888418 [info ]:  Succeeded model analytics_dev.stg_pos_test (view) [1 of 1 in 0.00s]
+11:20:46.891447 [info ]: Started scheduling
+11:20:46.891486 [info ]: Finished scheduling [  0.00s]
+11:20:46.891806 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [153ms]
+Processed: 1 model
+Summary: 1 total | 1 success
+11:20:46.891854 [info ]: Cached model count updated: 2 models (accurate)
+==================== 2026-10-01T11:20:48.061040Z | 2f28098b-5ba9-45b8-b443-c21f2b79d5af ====================
+11:20:48.061085 [info ]: Started loading project
+11:20:48.061395 [info ]: Loading profiles.yml
+11:20:48.064504 [info ]: Finished loading project [  0.00s]
+11:20:48.082951 [info ]: Cached model count updated: 2 models (estimate)
+11:20:48.082966 [info ]: Cached model count updated: 2 models (accurate)
+11:20:48.082997 [info ]: Started scheduling
+11:20:48.083078 [info ]: Finished scheduling [  0.00s]
+11:20:48.083091 [debug]: Compilation - 2 nodes selected: {"model.turyan_retail.mart_store_revenue", "model.turyan_retail.stg_pos_test"}
+11:20:48.084003 [info ]: Started building task graph
+11:20:48.084052 [info ]: Finished building task graph [  0.00s]
+11:20:48.084950 [info ]: Started rendering (2 nodes)
+11:20:48.084966 [info ]: Started model analytics_dev.mart_store_revenue
+11:20:48.084977 [debug]: Started rendering model analytics_dev.mart_store_revenue
+11:20:48.084996 [info ]: Started model analytics_dev.stg_pos_test
+11:20:48.085002 [debug]: Started rendering model analytics_dev.stg_pos_test
+11:20:48.085184 [debug]: Compiled SQL for node model.turyan_retail.stg_pos_test at target/.lsp/compiled/turyan_retail/models/staging/stg_pos_test.sql
+11:20:48.085259 [debug]: Finished rendering [  0.00s] model analytics_dev.stg_pos_test [success]
+11:20:48.085272 [info ]:  Succeeded model analytics_dev.stg_pos_test (view) [2 of 2 in 0.00s]
+11:20:48.085416 [debug]: Compiled SQL for node model.turyan_retail.mart_store_revenue at target/.lsp/compiled/turyan_retail/models/marts/mart_store_revenue.sql
+11:20:48.085461 [debug]: Finished rendering [  0.00s] model analytics_dev.mart_store_revenue [success]
+11:20:48.085470 [info ]: Finished rendering [  0.00s] (2 nodes, 0 skipped, 0 errors)
+11:20:48.085474 [info ]:  Succeeded model analytics_dev.mart_store_revenue (table) [1 of 2 in 0.00s]
+11:20:48.090611 [info ]: Started scheduling
+11:20:48.090644 [info ]: Finished scheduling [  0.00s]
+11:20:48.090682 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [29ms]
+Processed: 2 models
+Summary: 2 total | 2 success
+11:20:48.090757 [info ]: Cached model count updated: 2 models (accurate)
+03:06:44.896998 [debug]: Ignoring unsupported LSP notification
+06:38:02.220338 [debug]: Ignoring unsupported LSP notification
+10:23:09.861470 [debug]: Ignoring unsupported LSP notification
