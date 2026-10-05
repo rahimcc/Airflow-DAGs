@@ -16,3 +16,4 @@ venv
 *newsletter.txt
 .env.dev
 *logs
+dbt/turyan_retail/target
