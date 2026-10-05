@@ -1,0 +1,23 @@
+models:
+  - name: stg_pos_test
+    columns:
+      - name: transaction_id
+        data_tests:
+          - unique
+          - not_null
+      - name: store_code
+        data_tests:
+          - not_null
+          - accepted_values:
+             arguments: 
+               values: ['TRY-RTL-001','TRY-RTL-002','TRY-RTL-003','TRY-RTL-004','TRY-RTL-005']
+      - name: customer_id
+        data_tests:
+          - not_null
+      - name: quantity
+        data_tests:
+          - not_null
+      - name: unit_price
+        data_tests:
+          - not_null
+
