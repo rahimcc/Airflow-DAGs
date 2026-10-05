@@ -17,3 +17,4 @@ venv
 .env.dev
 *logs
 dbt/turyan_retail/target
+dbt/turyan_retail/logs
